@@ -1,0 +1,6 @@
+{
+  "extends": "@chat/tsconfig/library.json",
+  "include": [
+    "index.ts"
+  ]
+}

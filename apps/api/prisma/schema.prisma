@@ -1,0 +1,85 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String  @id @default(uuid())
+  name         String
+  email        String  @unique
+  passwordHash String? @map("password_hash")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  tokens    Token[]
+  ChatGroup ChatGroup[]
+
+  @@map("users")
+}
+
+model Image {
+  userId   Int     @default(0)
+  // base64 string
+  data     String
+  isBanner Boolean @default(false)
+
+  @@unique([userId, isBanner])
+  @@map(name: "images")
+}
+
+enum TokenType {
+  PASSWORD_RECOVER
+}
+
+model Token {
+  id        String    @id @default(uuid())
+  type      TokenType
+  createdAt DateTime  @default(now()) @map("created_at")
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @map("user_id")
+
+  @@map("tokens")
+}
+
+model ChatGroup {
+  id         String       @id @default(uuid()) @db.Uuid
+  user       User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId     String       @map("user_id")
+  title      String       @db.VarChar(191)
+  passcode   String       @db.VarChar(20)
+  createdAt  DateTime     @default(now()) @map("created_at")
+  Chats      Chats[]
+  GroupUsers GroupUsers[]
+
+  @@index([userId, createdAt])
+  @@map("chat_groups")
+}
+
+model Chats {
+  id        String    @id @default(uuid())
+  group     ChatGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  groupId   String    @db.Uuid
+  message   String?
+  name      String
+  file      String?
+  createdAt DateTime  @default(now()) @map("createdAt")
+
+  @@index([createdAt])
+  @@map("chats")
+}
+
+model GroupUsers {
+  id        Int       @id @default(autoincrement())
+  group     ChatGroup @relation(fields: [groupId], references: [id], onDelete: Cascade)
+  groupId   String    @db.Uuid
+  name      String
+  createdAt DateTime  @default(now()) @map("createdAt")
+
+  @@map("group_users")
+}
