@@ -9,3 +9,7 @@ services:
       - POSTGRESQL_USER=docker
       - POSTGRESQL_PASSWORD=docker
       - POSTGRESQL_DB=chat
+  redis:
+    image: redis:latest
+    ports:
+      - '6379:6379'
