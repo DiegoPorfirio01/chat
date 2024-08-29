@@ -17,14 +17,14 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecover } from './routes/auth/request-password-recover'
 import { resetPassword } from './routes/auth/reset-password'
-import { createAdapter } from '@socket.io/redis-streams-adapter';
-import { instrument } from '@socket.io/admin-ui';
-import { Server } from 'socket.io'
-import { createServer } from 'http'
-import redis from '@/lib/redis'
-import { setupSocket } from '@/socket'
-import { connectKafkaProducer } from '@/lib/kafka.config'
-import { consumeMessages } from '@/utils'
+import { createChatGroup } from './routes/chat/create-chat-group'
+import { createChatGroupsUser } from './routes/chat/create-chat-group-user'
+import { deleteChatGroup } from './routes/chat/delete-chat-group'
+import { getChatGroup } from './routes/chat/get-chat-group'
+import { getChatGroups } from './routes/chat/get-chat-groups'
+import { getChatGroupsUser } from './routes/chat/get-chat-groups-user'
+import { getChats } from './routes/chat/get-chats'
+import { updateChatGroup } from './routes/chat/update-chat-group'
 
 // validates and parse
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -106,6 +106,19 @@ app.register(authenticateWithPassword)
 
 app.register(requestPasswordRecover)
 app.register(resetPassword)
+
+// -> chat
+app.register(createChatGroup)
+app.register(createChatGroupsUser)
+
+app.register(updateChatGroup)
+
+app.register(deleteChatGroup)
+
+app.register(getChatGroup)
+app.register(getChatGroups)
+app.register(getChatGroupsUser)
+app.register(getChats)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('Server is running on port 3333')
