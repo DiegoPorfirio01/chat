@@ -17,13 +17,50 @@ import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
 import { requestPasswordRecover } from './routes/auth/request-password-recover'
 import { resetPassword } from './routes/auth/reset-password'
+import { createAdapter } from '@socket.io/redis-streams-adapter';
+import { instrument } from '@socket.io/admin-ui';
+import { Server } from 'socket.io'
+import { createServer } from 'http'
+import redis from '@/lib/redis'
+import { setupSocket } from '@/socket'
+import { connectKafkaProducer } from '@/lib/kafka.config'
+import { consumeMessages } from '@/utils'
 
+// validates and parse
 const app = fastify().withTypeProvider<ZodTypeProvider>()
-
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
-app.register(fastifyCors)
+// cors
+app.register(fastifyCors, {
+  origin: [env.NEXT_PUBLIC_APP_URL, 'https://admin.socket.io']
+});
+
+// socket with redis
+const server = createServer(app.server);
+const io = new Server(server, {
+  cors: {
+    origin: [env.NEXT_PUBLIC_APP_URL, 'https://admin.socket.io'],
+  },
+  adapter: createAdapter(redis),
+});
+
+instrument(io, {
+  auth: false,
+  mode: 'development',
+});
+
+app.decorate('io', io);  
+
+setupSocket(io);
+
+// ### kafka ###
+// * Add Kafka Producer
+connectKafkaProducer().catch((err) => console.log("Kafka Consumer error", err));
+
+consumeMessages(process.env.KAFKA_TOPIC).catch((err) =>
+  console.log("The Kafka Consume error", err)
+);
 
 // documentation
 app.register(fastifySwagger, {
@@ -55,7 +92,10 @@ app.setErrorHandler(errorHandler)
 
 // ### routes ###
 
-// auth
+// -> chat
+
+
+// -> auth
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
 })
