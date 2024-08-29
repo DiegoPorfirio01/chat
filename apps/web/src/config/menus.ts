@@ -1,4 +1,4 @@
-import type { DashboardTab, MarketingMenu } from "@/@types";
+import type { DashboardTab, MarketingMenu, MenuItem } from "@/@types";
 
 export const dashboardMenu : DashboardTab = [
   {
@@ -38,6 +38,33 @@ export const marketingMenu : MarketingMenu = [
   },
   {
     title: 'sign-up',
+    href: "/auth/sign-up",
+  },
+];
+
+export const menuItems: MenuItem[] = [
+  {
+    label: "Home",
+    href: "/",
+  },
+  {
+    label: "About",
+    href: "/about",
+  },
+  {
+    label: "Pricing",
+    href: "/prices",
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+  },
+  {
+    label: "Login",
+    href: "/auth/login",
+  },
+  {
+    label: "Sign Up",
     href: "/auth/sign-up",
   },
 ];

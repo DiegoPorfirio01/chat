@@ -1,4 +1,7 @@
+import FeatureSection from "@/components/marketing/feature";
+import HeroSection from "@/components/marketing/hero";
 import { MarketingMenu } from "@/components/marketing/menu";
+import UserReviews from "@/components/marketing/users-review";
 import { getMessages } from "next-intl/server";
 
 export async function generateMetadata({
@@ -16,6 +19,11 @@ export async function generateMetadata({
 
 export default function Home() {
   return (
-    <></>
+    <>
+      <HeroSection />
+      <FeatureSection />
+      <UserReviews />
+      <Footer />
+    </>
   )
 }

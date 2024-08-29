@@ -15,8 +15,6 @@
     }
   },
   "marketing": {
-    "title": "Marketing",
-    "welcome": "Bienvenido al marketing",
     "menu": {
       "home": "Inicio",
       "about": "Acerca de",
@@ -24,6 +22,50 @@
       "contact": "Contacto",
       "login": "Iniciar sesión",
       "sign-up": "Registrarse"
+    },
+    "title": "Marketing",
+    "welcome": "Bienvenido al marketing",
+    "hero": {
+      "title": "Enlaces de Chat Instantáneos para Conversaciones Sin Esfuerzo",
+      "description": "QuickChat hace que sea fácil crear enlaces de chat seguros e iniciar conversaciones en segundos.",
+      "button": "Comenzar a Chatear",
+      "illustrationAlt": "Ilustración de una persona enviando un mensaje de chat"
+    },
+    "features": {
+      "instantSetup": {
+        "title": "Configuración Instantánea",
+        "description": "Genera un enlace de sala en segundos. No se requiere cuenta."
+      },
+      "secure": {
+        "title": "Seguro",
+        "description": "Protección con contraseña para tus conversaciones privadas."
+      },
+      "crossPlatform": {
+        "title": "Multiplataforma",
+        "description": "Funciona en cualquier dispositivo con un navegador web moderno."
+      }
+    },
+    "userReviews": {
+      "sectionTitle": "Lo Que Dicen Nuestros Usuarios",
+      "reviews": [
+        {
+          "quote": "“QuickChat es un cambio de juego! La forma más rápida de iniciar un chat.”",
+          "name": "Juan Pérez, Desarrollador",
+          "imageAlt": "Usuario Avatar"
+        },
+        {
+          "quote": "“La encriptación es de primera clase. Me siento seguro usando QuickChat.”",
+          "name": "Ana Gómez, Diseñadora",
+          "imageAlt": "Usuario Avatar"
+        }
+      ]
+    },
+    "footer": {
+      "copyright": "Todos los derechos reservados.",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos del Servicio",
+      "subscribePlaceholder": "Suscríbete a nuestro boletín",
+      "subscribeButton": "Suscribirse"
     }
   }
 }

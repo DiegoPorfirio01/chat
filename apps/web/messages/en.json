@@ -15,8 +15,6 @@
     }
   },
   "marketing": {
-    "title": "Marketing",
-    "welcome": "Welcome to the marketing",
     "menu": {
       "home": "Home",
       "about": "About",
@@ -24,6 +22,50 @@
       "contact": "Contact",
       "login": "Login",
       "sign-up": "Sign Up"
+    },
+    "title": "Marketing",
+    "welcome": "Welcome to the marketing",
+    "hero": {
+      "title": "Instant Chat Links for Seamless Conversations",
+      "description": "QuickChat makes it effortless to create secure chat links and start conversations in seconds.",
+      "button": "Start Chatting",
+      "illustrationAlt": "Illustration of a person sending a chat message"
+    },
+    "features": {
+      "instantSetup": {
+        "title": "Instant Setup",
+        "description": "Generate a room link in seconds. No account required."
+      },
+      "secure": {
+        "title": "Secure",
+        "description": "Passcode protection for your private conversations."
+      },
+      "crossPlatform": {
+        "title": "Cross-Platform",
+        "description": "Works on any device with a modern web browser."
+      }
+    },
+    "userReviews": {
+      "sectionTitle": "What Our Users Say",
+      "reviews": [
+        {
+          "quote": "“QuickChat is a game-changer! The fastest way to start a chat.”",
+          "name": "John Doe, Developer",
+          "imageAlt": "User Avatar"
+        },
+        {
+          "quote": "“The encryption is top-notch. I feel secure using QuickChat.”",
+          "name": "Jane Smith, Designer",
+          "imageAlt": "User Avatar"
+        }
+      ]
+    },
+    "footer": {
+      "copyright": "All rights reserved.",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "subscribePlaceholder": "Subscribe to our newsletter",
+      "subscribeButton": "Subscribe"
     }
   }
 }

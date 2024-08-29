@@ -5,13 +5,13 @@ import { cn } from '@/lib/utils';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import { Toaster } from 'sonner';
 import { Providers } from '../providers';
-import { siteConfig } from '../../config/site';
 import {NextIntlClientProvider} from 'next-intl';
 import type { ReactNode } from 'react';
 import { getMessages } from 'next-intl/server';
 import Header from '@/components/header';
 import TopLoader from '@/components/top-loader';
 import Head from 'next/head';
+import { siteConfig } from '@/config/app';
 
 export const metadata: Metadata = {
   title: {
