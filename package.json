@@ -1,5 +1,5 @@
 {
-  "name": "The best chat app",
+  "name": "chat",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -9,8 +9,8 @@
   "devDependencies": {
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@9.9.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=18.18"
   }
 }

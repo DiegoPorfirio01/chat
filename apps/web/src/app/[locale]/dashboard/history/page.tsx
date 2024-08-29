@@ -1,4 +1,4 @@
-import TransitionFadeIn from "@/components/dashboard/transition-fade-in";
+import TransitionFadeIn from "@/components/transition-fade-in";
 
 export default function History() {
   return (

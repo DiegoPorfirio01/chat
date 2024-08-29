@@ -1,20 +1,15 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { i18nConfig } from "@/config/app";
+import createMiddleware from "next-intl/middleware";
 
-export function middleware(request: NextRequest) {
-  const response = NextResponse.next()
+const locales = i18nConfig.locales
+const defaultLocale = i18nConfig.defaultLocale
 
-  return response
-}
+export default createMiddleware({
+  locales ,
+  defaultLocale,
+  localePrefix: 'always',
+});
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
-}
+  matcher: ["/", "/(pt-br|en|es)/:path*"],
+};

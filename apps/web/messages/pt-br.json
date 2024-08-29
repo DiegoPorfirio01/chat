@@ -1,0 +1,29 @@
+{
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo ao painel",
+    "tab": {
+      "history": "Histórico",
+      "chats": "Chats",
+      "settings": "Configurações"
+    },
+    "profileButton": {
+      "label": "Perfil",
+      "menu": {
+        "logout": "Sair"
+      }
+    }
+  },
+  "marketing": {
+    "title": "Marketing",
+    "welcome": "Bem-vindo ao marketing",
+    "menu": {
+      "home": "Início",
+      "about": "Sobre",
+      "pricing": "Preços",
+      "contact": "Contato",
+      "login": "Entrar",
+      "sign-up": "Cadastrar"
+    }
+  }
+}

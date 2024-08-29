@@ -1,0 +1,29 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to the dashboard",
+    "tab": {
+      "history": "History",
+      "chats": "Chats",
+      "settings": "Settings"
+    },
+    "profileButton" : {
+      "label": "Profile",
+      "menu": {
+        "logout": "Logout"
+      }
+    }
+  },
+  "marketing": {
+    "title": "Marketing",
+    "welcome": "Welcome to the marketing",
+    "menu": {
+      "home": "Home",
+      "about": "About",
+      "pricing": "Pricing",
+      "contact": "Contact",
+      "login": "Login",
+      "sign-up": "Sign Up"
+    }
+  }
+}

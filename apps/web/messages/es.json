@@ -1,0 +1,29 @@
+{
+  "dashboard": {
+    "title": "Panel de control",
+    "welcome": "Bienvenido al panel de control",
+    "tab": {
+      "history": "Historial",
+      "chats": "Chats",
+      "settings": "Configuración"
+    },
+    "profileButton": {
+      "label": "Perfil",
+      "menu": {
+        "logout": "Cerrar sesión"
+      }
+    }
+  },
+  "marketing": {
+    "title": "Marketing",
+    "welcome": "Bienvenido al marketing",
+    "menu": {
+      "home": "Inicio",
+      "about": "Acerca de",
+      "pricing": "Precios",
+      "contact": "Contacto",
+      "login": "Iniciar sesión",
+      "sign-up": "Registrarse"
+    }
+  }
+}
