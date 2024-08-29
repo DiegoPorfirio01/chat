@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
- 
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Chat Lucy',
@@ -11,9 +11,9 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#fff',
     icons: [
       {
-        "src": "/favicon.ico",
-        "sizes": "192x192",
-        "type": "image/png"
+        src: '/favicon.ico',
+        sizes: '192x192',
+        type: 'image/png',
       },
     ],
   }

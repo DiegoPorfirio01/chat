@@ -1,4 +1,4 @@
-import Tabs from "@/components/dashboard/tabs"
+import Tabs from '@/components/dashboard/tabs'
 
 export default async function DashboardLayout({
   children,
@@ -7,14 +7,13 @@ export default async function DashboardLayout({
   children: React.ReactNode
   sheet: React.ReactNode
 }>) {
-  
   return (
     <>
-     <div className="space-y-4 p-4">
-          <div className="mx-auto w-full max-w-[1200px]">
-            <Tabs />
-            {children}
-            {sheet}
+      <div className="space-y-4 p-4">
+        <div className="mx-auto w-full max-w-[1200px]">
+          <Tabs />
+          {children}
+          {sheet}
         </div>
       </div>
     </>

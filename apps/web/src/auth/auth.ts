@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+
 import { getProfile } from '@/http/get-profile'
 
 export function isAuthenticated() {

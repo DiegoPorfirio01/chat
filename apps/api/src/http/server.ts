@@ -1,8 +1,10 @@
+import { env } from '@chat/env'
 import { fastifyCors } from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
-import { env } from '@chat/env'
+import { instrument } from '@socket.io/admin-ui'
+import { createAdapter } from '@socket.io/redis-streams-adapter'
 import { fastify } from 'fastify'
 import {
   jsonSchemaTransform,
@@ -10,6 +12,13 @@ import {
   validatorCompiler,
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
+import { createServer } from 'http'
+import { Server } from 'socket.io'
+
+import { connectKafkaProducer } from '@/lib/kafka.config'
+import redis from '@/lib/redis'
+import { setupSocket } from '@/socket'
+import { consumeMessages } from '@/utils'
 
 import { errorHandler } from './error-handler'
 import { authenticateWithPassword } from './routes/auth/authenticate-with-password'
@@ -33,41 +42,41 @@ app.setValidatorCompiler(validatorCompiler)
 
 // cors
 app.register(fastifyCors, {
-  origin: [env.NEXT_PUBLIC_APP_URL, 'https://admin.socket.io']
-});
+  origin: [env.NEXT_PUBLIC_APP_URL, 'https://admin.socket.io'],
+})
 
 // socket with redis
-const server = createServer(app.server);
+const server = createServer(app.server)
 const io = new Server(server, {
   cors: {
     origin: [env.NEXT_PUBLIC_APP_URL, 'https://admin.socket.io'],
   },
   adapter: createAdapter(redis),
-});
+})
 
 instrument(io, {
   auth: false,
   mode: 'development',
-});
+})
 
-app.decorate('io', io);  
+app.decorate('io', io)
 
-setupSocket(io);
+setupSocket(io)
 
 // ### kafka ###
 // * Add Kafka Producer
-connectKafkaProducer().catch((err) => console.log("Kafka Consumer error", err));
+connectKafkaProducer().catch((err) => console.log('Kafka Consumer error', err))
 
-consumeMessages(process.env.KAFKA_TOPIC).catch((err) =>
-  console.log("The Kafka Consume error", err)
-);
+consumeMessages(env.KAFKA_TOPIC).catch((err) =>
+  console.log('The Kafka Consume error', err),
+)
 
 // documentation
 app.register(fastifySwagger, {
   openapi: {
     info: {
-      title: 'Chat Realtime API"',
-      description: 'The best API ever',
+      title: 'Chat Lucy API"',
+      description: 'Welcome to the Chat Lucy API',
       version: '0.1.0',
     },
     components: {
@@ -91,9 +100,6 @@ app.register(fastifySwaggerUI, {
 app.setErrorHandler(errorHandler)
 
 // ### routes ###
-
-// -> chat
-
 
 // -> auth
 app.register(fastifyJwt, {

@@ -1,6 +1,6 @@
-import type { DashboardTab, MarketingMenu, MenuItem } from "@/@types";
+import type { DashboardTab, MarketingMenu, MenuItem } from '@/@types'
 
-export const dashboardMenu : DashboardTab = [
+export const dashboardMenu: DashboardTab = [
   {
     title: 'Chats',
     href: '/dashboard/chats',
@@ -15,56 +15,56 @@ export const dashboardMenu : DashboardTab = [
   },
 ]
 
-export const marketingMenu : MarketingMenu = [
+export const marketingMenu: MarketingMenu = [
   {
     title: 'home',
-    href: "/",
+    href: '/',
   },
   {
     title: 'about',
-    href: "/about",
+    href: '/about',
   },
   {
     title: 'pricing',
-    href: "/prices",
+    href: '/prices',
   },
   {
     title: 'contact',
-    href: "/contact",
+    href: '/contact',
   },
   {
     title: 'login',
-    href: "/auth/login",
+    href: '/auth/login',
   },
   {
     title: 'sign-up',
-    href: "/auth/sign-up",
+    href: '/auth/sign-up',
   },
-];
+]
 
 export const menuItems: MenuItem[] = [
   {
-    label: "Home",
-    href: "/",
+    label: 'Home',
+    href: '/',
   },
   {
-    label: "About",
-    href: "/about",
+    label: 'About',
+    href: '/about',
   },
   {
-    label: "Pricing",
-    href: "/prices",
+    label: 'Pricing',
+    href: '/prices',
   },
   {
-    label: "Contact",
-    href: "/contact",
+    label: 'Contact',
+    href: '/contact',
   },
   {
-    label: "Login",
-    href: "/auth/login",
+    label: 'Login',
+    href: '/auth/login',
   },
   {
-    label: "Sign Up",
-    href: "/auth/sign-up",
+    label: 'Sign Up',
+    href: '/auth/sign-up',
   },
-];
+]

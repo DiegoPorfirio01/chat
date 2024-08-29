@@ -1,8 +1,10 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
-import { BadRequestError } from '../_errors/bad-request-error'
+
 import { prisma } from '@/lib/prisma'
+
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function getChatGroupsUser(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().get(
@@ -22,23 +24,23 @@ export async function getChatGroupsUser(app: FastifyInstance) {
                 id: z.number(),
                 groupId: z.string().uuid(),
                 name: z.string(),
-                createdAt: z.date()
+                createdAt: z.date(),
               }),
             ),
           }),
         },
       },
     },
-    async (request, reply) => {
+    async (request) => {
       const { groupId } = request.query
-      
+
       const groupsUser = await prisma.groupUsers.findMany({
         where: {
-          groupId
+          groupId,
         },
-      });
+      })
 
-      if (! groupsUser) {
+      if (!groupsUser) {
         throw new BadRequestError('Groups not founds')
       }
 

@@ -1,8 +1,10 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
-import { BadRequestError } from '../_errors/bad-request-error'
+
 import { prisma } from '@/lib/prisma'
+
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function updateChatGroup(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().put(
@@ -27,17 +29,17 @@ export async function updateChatGroup(app: FastifyInstance) {
     async (request, reply) => {
       const { title, passcode } = request.body
       const { id } = request.params
-      
+
       try {
         await prisma.chatGroup.update({
           where: {
-            id
+            id,
           },
           data: {
             title,
             passcode,
           },
-        });
+        })
 
         return reply.status(204).send()
       } catch (error) {

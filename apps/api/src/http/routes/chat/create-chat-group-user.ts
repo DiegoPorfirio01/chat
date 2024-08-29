@@ -1,8 +1,10 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
-import { BadRequestError } from '../_errors/bad-request-error'
+
 import { prisma } from '@/lib/prisma'
+
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function createChatGroupsUser(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
@@ -10,7 +12,7 @@ export async function createChatGroupsUser(app: FastifyInstance) {
     {
       schema: {
         tags: ['chat groups user'],
-        summary: 'create chat group user',
+        summary: 'Create chat group user',
         security: [{ bearerAuth: [] }],
         body: z.object({
           groupId: z.string().uuid(),
@@ -23,15 +25,15 @@ export async function createChatGroupsUser(app: FastifyInstance) {
         },
       },
     },
-    async (request, reply) => {
+    async (request) => {
       const { groupId, name } = request.body
-      
+
       try {
         const groupUser = await prisma.groupUsers.create({
           data: {
             groupId,
             name,
-          }
+          },
         })
 
         return { groupUserId: groupUser.id }

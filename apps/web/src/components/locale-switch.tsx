@@ -1,22 +1,28 @@
-"use client";
+'use client'
 
-import { DropdownMenu } from '@radix-ui/react-dropdown-menu';
-import { Languages } from 'lucide-react';
-import { usePathname, useRouter } from 'next/navigation';
-import { i18nConfig } from '@/config/app';
-import { DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
-import { Button } from './ui/button';
+import { DropdownMenu } from '@radix-ui/react-dropdown-menu'
+import { Languages } from 'lucide-react'
+import { usePathname, useRouter } from 'next/navigation'
 
-const { localeLabels, locales } = i18nConfig;
+import { i18nConfig } from '@/config/app'
+
+import { Button } from './ui/button'
+import {
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu'
+
+const { localeLabels, locales } = i18nConfig
 
 export function LocaleSwitch() {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter()
+  const pathname = usePathname()
 
   const handleLanguageChange = (locale: string) => {
-    const path = pathname.split('/').slice(2).join('/');
-    router.push(`/${locale}/${path}`);
-  };
+    const path = pathname.split('/').slice(2).join('/')
+    router.push(`/${locale}/${path}`)
+  }
 
   return (
     <DropdownMenu>
@@ -38,5 +44,5 @@ export function LocaleSwitch() {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  );
+  )
 }

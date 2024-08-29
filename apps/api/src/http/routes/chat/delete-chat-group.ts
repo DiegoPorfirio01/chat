@@ -1,8 +1,10 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
-import { BadRequestError } from '../_errors/bad-request-error'
+
 import { prisma } from '@/lib/prisma'
+
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function deleteChatGroup(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().delete(
@@ -22,13 +24,13 @@ export async function deleteChatGroup(app: FastifyInstance) {
     },
     async (request, reply) => {
       const { id } = request.params
-      
+
       try {
         await prisma.chatGroup.delete({
           where: {
-            id
+            id,
           },
-        });
+        })
 
         return reply.status(204).send()
       } catch (error) {

@@ -22,7 +22,7 @@ export async function signUp({
       name,
     },
   })
-  
+
   const result = await api
     .post('sessions/password', {
       json: {

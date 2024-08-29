@@ -34,7 +34,6 @@ export async function signInWithEmailAndPassoword(data: FormData) {
       path: '/',
       maxAge: 60 * 70 * 24 * 7, // 7days
     })
-
   } catch (err) {
     if (err instanceof HTTPError) {
       const { message } = await err.response.json()

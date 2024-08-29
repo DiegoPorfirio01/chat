@@ -1,18 +1,19 @@
-import React from 'react';
-import Image from 'next/image';
-import { Card } from '@/components/ui/card';
-import { useTranslations } from 'next-intl';
-import { reviews } from '@/config/app';
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import React from 'react'
+
+import { Card } from '@/components/ui/card'
+import { reviews } from '@/config/app'
 
 export default function UserReviews() {
-  const t  = useTranslations();
+  const t = useTranslations()
 
   return (
-    <section className="p-12 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <section className="bg-gray-50 p-12">
+      <h2 className="mb-8 text-center text-3xl font-bold">
         {t('userReviews.sectionTitle')}
       </h2>
-      <div className="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-6">
+      <div className="flex flex-col justify-center space-y-6 md:flex-row md:space-x-6 md:space-y-0">
         {reviews.map((review, index) => (
           <Card key={index} className="p-6 text-center">
             <p className="text-lg text-gray-700">
@@ -24,7 +25,7 @@ export default function UserReviews() {
                 alt={t(`userReviews.reviews.${index}.imageAlt`)}
                 width={48} // Ajuste o tamanho conforme necessário
                 height={48} // Ajuste o tamanho conforme necessário
-                className="rounded-full mx-auto"
+                className="mx-auto rounded-full"
               />
               <div className="mt-2 text-gray-800">
                 {t(`userReviews.reviews.${index}.name`)}
@@ -34,5 +35,5 @@ export default function UserReviews() {
         ))}
       </div>
     </section>
-  );
+  )
 }

@@ -1,32 +1,31 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { useTranslations } from "next-intl";
+import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import React from 'react'
+
+import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
-  const t  = useTranslations();
+  const t = useTranslations()
 
   return (
-    <section className="flex-1 flex flex-col items-center justify-center text-center p-12 bg-gradient-to-b from-gray-50 to-white">
-      <h1 className="text-5xl font-extrabold text-gray-900 mb-4">
+    <section className="flex flex-1 flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-white p-12 text-center">
+      <h1 className="mb-4 text-5xl font-extrabold text-gray-900">
         {t('hero.title')}
       </h1>
-      <p className="text-xl text-gray-600 mb-8">
-        {t('hero.description')}
-      </p>
+      <p className="mb-8 text-xl text-gray-600">{t('hero.description')}</p>
       <Link href="/dashboard">
         <Button size="lg" className="animate-pulse">
           {t('hero.button')}
         </Button>
       </Link>
 
-      <div className="mt-12 w-full max-w-5xl flex justify-center">
+      <div className="mt-12 flex w-full max-w-5xl justify-center">
         <img
           src="/images/conversation.svg"
           alt={t('hero.illustrationAlt')}
-          className="w-full h-auto"
+          className="h-auto w-full"
         />
       </div>
     </section>
-  );
+  )
 }

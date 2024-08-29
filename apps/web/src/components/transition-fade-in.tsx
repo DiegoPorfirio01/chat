@@ -1,18 +1,18 @@
 'use client'
 
-import { usePathname } from 'next/navigation';
-import React, { useEffect, useState, type ReactNode } from 'react';
+import { usePathname } from 'next/navigation'
+import React, { type ReactNode, useEffect, useState } from 'react'
 
 const TransitionFadeIn = ({ children }: { children: ReactNode }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const pathname = usePathname();
+  const [isVisible, setIsVisible] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
-    setIsVisible(false); // Hide initially
-    const timer = setTimeout(() => setIsVisible(true), 100); // Delay to see transition
+    setIsVisible(false) // Hide initially
+    const timer = setTimeout(() => setIsVisible(true), 100) // Delay to see transition
 
-    return () => clearTimeout(timer); // Cleanup timer on unmount or pathname change
-  }, [pathname]);
+    return () => clearTimeout(timer) // Cleanup timer on unmount or pathname change
+  }, [pathname])
 
   return (
     <div
@@ -20,7 +20,7 @@ const TransitionFadeIn = ({ children }: { children: ReactNode }) => {
     >
       {children}
     </div>
-  );
+  )
 }
 
-export default TransitionFadeIn;
+export default TransitionFadeIn

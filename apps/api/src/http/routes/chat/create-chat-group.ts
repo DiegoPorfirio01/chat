@@ -1,8 +1,10 @@
 import type { FastifyInstance } from 'fastify'
 import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
-import { BadRequestError } from '../_errors/bad-request-error'
+
 import { prisma } from '@/lib/prisma'
+
+import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function createChatGroup(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
@@ -24,9 +26,9 @@ export async function createChatGroup(app: FastifyInstance) {
         },
       },
     },
-    async (request, reply) => {
+    async (request) => {
       const { title, userId, passcode } = request.body
-      
+
       try {
         const group = await prisma.chatGroup.create({
           data: {
@@ -34,7 +36,7 @@ export async function createChatGroup(app: FastifyInstance) {
             passcode,
             userId,
           },
-        });
+        })
         return { chatGroupId: group.id }
       } catch (error) {
         throw new BadRequestError('Failed to create group')

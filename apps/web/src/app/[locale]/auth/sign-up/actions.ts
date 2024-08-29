@@ -1,10 +1,10 @@
 'use server'
 
 import { HTTPError } from 'ky'
+import { cookies } from 'next/headers'
 import { z } from 'zod'
 
 import { signUp } from '@/http/sign-up'
-import { cookies } from 'next/headers'
 
 const signUpSchema = z
   .object({
@@ -44,7 +44,6 @@ export async function signUpAction(data: FormData) {
       path: '/',
       maxAge: 60 * 70 * 24 * 7, // 7days
     })
-
   } catch (err) {
     if (err instanceof HTTPError) {
       const { message } = await err.response.json()
