@@ -11,6 +11,10 @@ export const env = createEnv({
   shared: {
     NEXT_PUBLIC_API_URL: z.string().url(),
     NEXT_PUBLIC_APP_URL: z.string().url(),
+    KAFKA_BROKER: z.string(),
+    KAFKA_USERNAME: z.string(),
+    KAFKA_PASSWORD: z.string(),
+    KAFKA_TOPIC: z.string(),
   },
   runtimeEnv: {
     SERVER_PORT: process.env.SERVER_PORT,
@@ -18,6 +22,10 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    KAFKA_BROKER: process.env.KAFKA_BROKER,
+    KAFKA_USERNAME: process.env.KAFKA_USERNAME,
+    KAFKA_PASSWORD: process.env.KAFKA_PASSWORD,
+    KAFKA_TOPIC: process.env.KAFKA_TOPIC,
   },
   emptyStringAsUndefined: true,
 })
