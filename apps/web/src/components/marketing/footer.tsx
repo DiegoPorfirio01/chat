@@ -11,25 +11,30 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 p-6 text-white">
-      <div className="flex justify-between">
-        <div>
-          <div>
-            © {currentYear} {siteConfig.name} {t('footer.copyright')}
-          </div>
-          <div className="mt-2 space-x-4">
-            <Link href="/privacy-policy">{t('')}</Link>
-            <Link href="/terms-of-service">{t('footer.termsOfService')}</Link>
-          </div>
-        </div>
-        <div className="space-y-4">
-          <Input
-            placeholder={t('footer.subscribePlaceholder')}
-            className="border-none bg-gray-800"
-          />
-          <Button>{t('footer.subscribeButton')}</Button>
-        </div>
+    <footer className="py-6 md:px-8 md:py-0">
+      <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+        <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
+        {t("marketing.footer.builtBy")}{" "}
+          <a
+            href={'https://diego-vianna-porfirio.vercel.app'}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            Diego Vianna Porfirio
+          </a>
+          . {t("marketing.footer.availability")} {" "}
+          <a
+            href={'https://github.com/DiegoPorfirio01/chat-lucy'}
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            GitHub
+          </a>
+          .
+        </p>
       </div>
-    </footer>
+  </footer>
   )
 }

@@ -1,7 +1,6 @@
 'use client'
 
 import { AlertTriangle, Loader2 } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -9,34 +8,37 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Separator } from '@/components/ui/separator'
 import { useFormState } from '@/hooks/useFormState'
 
 import { signInWithEmailAndPassoword } from './actions'
+import { useLocale, useTranslations } from 'next-intl'
 
-export function SignInForm() {
+export async function SignInForm() {
   const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations('login')
 
   const [{ success, message, errors }, handleSubmit, isPending] = useFormState(
     signInWithEmailAndPassoword,
     () => {
-      router.push('/dashboard')
+      router.push(`${locale}/dashboard`)
     },
   )
+
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-4">
         {success === false && message && (
           <Alert variant={'destructive'}>
             <AlertTriangle className="size-4" />
-            <AlertTitle>Sign in failed !</AlertTitle>
+            <AlertTitle>{t('signInFailed')}</AlertTitle>
             <AlertDescription>
-              <p>{message}</p>
+              {message}
             </AlertDescription>
           </Alert>
         )}
         <div className="space-y-1">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('email')}</Label>
           <Input name="email" type="email" id="email" />
           {errors?.email && (
             <p className="text-xs font-medium text-red-500 dark:text-red-400">
@@ -46,7 +48,7 @@ export function SignInForm() {
         </div>
 
         <div className="space-y-1">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('password')}</Label>
           <Input name="password" type="password" id="password" />
           {errors?.password && (
             <p className="text-xs font-medium text-red-500 dark:text-red-400">
@@ -54,10 +56,10 @@ export function SignInForm() {
             </p>
           )}
           <Link
-            href={'/auth/forgot-password'}
+            href={`/${locale}/auth/forgot-password`}
             className="text-xs font-medium text-foreground hover:underline"
           >
-            Forget your password ?
+            {t('forgetPassword')}
           </Link>
         </div>
 
@@ -65,14 +67,13 @@ export function SignInForm() {
           {isPending ? (
             <Loader2 className="size-4 animate-spin" />
           ) : (
-            'Sign in with e-mail'
+            t('signInWithEmail')
           )}
         </Button>
 
         <Button className="w-full" size={'sm'} variant={'link'} asChild>
-          <Link href={'/auth/sign-up'}>Create new account</Link>
+          <Link href={`/${locale}/auth/sign-up`}>{t('createNewAccount')}</Link>
         </Button>
-        <Separator />
       </form>
     </>
   )

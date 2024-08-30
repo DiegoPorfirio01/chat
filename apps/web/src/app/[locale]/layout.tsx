@@ -1,4 +1,5 @@
 import '../globals.css'
+import "../index.css"
 
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
@@ -14,6 +15,7 @@ import { siteConfig } from '@/config/app'
 import { cn } from '@/lib/utils'
 
 import { Providers } from '../providers'
+import Footer from '@/components/marketing/footer'
 
 export const metadata: Metadata = {
   title: {
@@ -52,10 +54,13 @@ export default async function LocaleLayout({
         <Providers>
           <NextIntlClientProvider messages={messages}>
             <Header locale={locale} />
-            <main className="mx-auto flex max-w-[1200px] p-4">{children}</main>
+            <div className='min-h-screen'>
+              {children}
+            </div>
           </NextIntlClientProvider>
         </Providers>
         <Toaster />
+        <Footer />
       </body>
     </html>
   )

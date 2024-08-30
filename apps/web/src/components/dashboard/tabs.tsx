@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { dashboardMenu } from '@/config/menus'
 
@@ -7,6 +7,7 @@ import { Button } from '../ui/button'
 
 const Tabs = () => {
   const t = useTranslations('dashboard.tabs')
+  const locale = useLocale()
 
   return (
     <div className="border-b py-4">
@@ -19,7 +20,7 @@ const Tabs = () => {
             className="border border-transparent text-muted-foreground data-[current=true]:border-border data-[current=true]:text-foreground"
             key={item.href}
           >
-            <NavLink href={item.href}>{t(item.title.toLowerCase())}</NavLink>
+            <NavLink href={`/${locale}${item.href}`}>{t(item.title.toLowerCase())}</NavLink>
           </Button>
         ))}
       </nav>

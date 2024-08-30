@@ -25,46 +25,34 @@ export const marketingMenu: MarketingMenu = [
     href: '/about',
   },
   {
-    title: 'pricing',
+    title: 'Prices',
     href: '/prices',
   },
   {
-    title: 'contact',
-    href: '/contact',
+    title: 'testimonials',
+    href: '/testimonials',
+  },
+  {
+    title: 'services',
+    href: '/services',
   },
   {
     title: 'login',
-    href: '/auth/login',
-  },
-  {
-    title: 'sign-up',
-    href: '/auth/sign-up',
+    href: '/auth/sign-in',
   },
 ]
 
-export const menuItems: MenuItem[] = [
+export const menuMobile : MarketingMenu = [
   {
-    label: 'Home',
+    title: 'home',
     href: '/',
   },
   {
-    label: 'About',
-    href: '/about',
+    title: 'testimonials',
+    href: '/testimonials',
   },
   {
-    label: 'Pricing',
-    href: '/prices',
-  },
-  {
-    label: 'Contact',
-    href: '/contact',
-  },
-  {
-    label: 'Login',
-    href: '/auth/login',
-  },
-  {
-    label: 'Sign Up',
-    href: '/auth/sign-up',
+    title: 'login',
+    href: '/auth/sign-in',
   },
 ]

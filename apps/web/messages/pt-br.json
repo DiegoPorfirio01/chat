@@ -1,7 +1,7 @@
 {
   "dashboard": {
-    "title": "Painel",
-    "welcome": "Bem-vindo ao painel",
+    "title": "Painel de Controle",
+    "welcome": "Bem-vindo ao painel de controle",
     "tab": {
       "history": "Histórico",
       "chats": "Chats",
@@ -19,52 +19,143 @@
       "home": "Início",
       "about": "Sobre",
       "pricing": "Preços",
-      "contact": "Contato",
+      "services": "Serviços",
+      "testimonials": "Depoimentos",
       "login": "Entrar",
-      "sign-up": "Cadastrar"
+      "sign-up": "Inscrever-se"
     },
     "title": "Marketing",
-    "welcome": "Bem-vindo ao marketing",
+    "welcome": "Bem-vindo ao Marketing",
     "hero": {
-      "title": "Links de Chat Instantâneos para Conversas Sem Esforço",
-      "description": "QuickChat facilita a criação de links de chat seguros e o início de conversas em segundos.",
+      "title": "Links",
+      "subtitle": "Para Conversas Sem Esforço",
+      "description": "O QuickChat facilita a criação de links de chat seguros e o início de conversas em segundos.",
       "button": "Começar a Conversar",
-      "illustrationAlt": "Ilustração de uma pessoa enviando uma mensagem de chat"
-    },
-    "features": {
-      "instantSetup": {
-        "title": "Configuração Instantânea",
-        "description": "Gere um link de sala em segundos. Nenhuma conta necessária."
-      },
-      "secure": {
-        "title": "Seguro",
-        "description": "Proteção com senha para suas conversas privadas."
-      },
-      "crossPlatform": {
-        "title": "Multiplataforma",
-        "description": "Funciona em qualquer dispositivo com um navegador moderno."
+      "cards": {
+        "card1": {
+          "title": "Este chat é incrível!",
+          "description": "Transforma ideias em software funcional que supera as expectativas."
+        },
+        "card2": {
+          "title": "Histórico",
+          "description": "Realmente gosto de transformar ideias em software funcional que supera as expectativas."
+        },
+        "card3": {
+          "title": "Chat em Tempo Real",
+          "description": "Experimente um chat em tempo real e uma comunicação fluida."
+        },
+        "card4": {
+          "title": "Modo Claro e Escuro",
+          "description": "Junte-se ao lado escuro; temos café."
+        }
       }
     },
-    "userReviews": {
-      "sectionTitle": "O Que Nossos Usuários Dizem",
-      "reviews": [
-        {
-          "quote": "“QuickChat é um divisor de águas! A forma mais rápida de iniciar um chat.”",
-          "name": "João Silva, Desenvolvedor",
-          "imageAlt": "Usuário Avatar"
-        },
-        {
-          "quote": "“A criptografia é de primeira. Sinto-me seguro usando o QuickChat.”",
-          "name": "Maria Santos, Designer",
-          "imageAlt": "Usuário Avatar"
-        }
-      ]
+    "sponsors": {
+      "title": "Investidores e Fundadores"
+    },
+    "aboutPage": {
+      "title": "Sobre",
+      "subtitle": "Empresa",
+      "description": "A melhor startup de todas"
+    },
+    "ctsPage": {
+      "title": "Todo o Seu",
+      "subtitle": "Ideias e Conceitos",
+      "description1": "Em Uma Interface",
+      "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, beatae. Ipsa tempore ipsum iste quibusdam illum ducimus eos. Quasi, sed!",
+      "button1": "Solicitar uma Demonstração",
+      "button2": "Ver Todas as Funcionalidades"
+    },
+    "statistics": {
+      "statistic1": {
+        "quantity": "2.7K+",
+        "description": "Usuários"
+      },
+      "statistic2": {
+        "quantity": "1.8K+",
+        "description": "Inscritos"
+      },
+      "statistic3": {
+        "quantity": "313",
+        "description": "Downloads"
+      },
+      "statistic4": {
+        "quantity": "665",
+        "description": "Produtos"
+      }
+    },
+    "servicesPage": {
+      "title": "Centrado no Cliente",
+      "subtitle": "Serviços",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor.",
+      "serviceList": {
+        "title1": "Chat em Tempo Real",
+        "description1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "title2": "Seguro e Privado",
+        "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "title3": "Histórico",
+        "description3": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente."
+      }
+    },
+    "pricingHeader": {
+      "title": "Planos de Preços",
+      "subtitle": "Escolha o plano que melhor se adapta a você"
+    },
+    "pricingSwitch": {
+      "monthly": "Mensal",
+      "yearly": "Anual"
+    },
+    "pricingCard": {
+      "save": "Economize ${amount}",
+      "perYear": "/ano",
+      "perMonth": "/mês",
+      "custom": "Personalizado"
+    },
+    "planFree": {
+      "title": "Grátis",
+      "monthlyPrice": "0",
+      "yearlyPrice": "0",
+      "description": "Grátis para sempre",
+      "feature1": "Exemplo de Recurso Número 1",
+      "feature2": "Exemplo de Recurso Número 2",
+      "actionLabel": "Começar"
+    },
+    "planBasic": {
+      "title": "Básico",
+      "monthlyPrice": "9.99",
+      "yearlyPrice": "99.99",
+      "description": "Plano básico com recursos essenciais",
+      "feature1": "Exemplo de Recurso Número 1",
+      "feature2": "Exemplo de Recurso Número 2",
+      "actionLabel": "Assinar"
+    },
+    "planPremium": {
+      "title": "Premium",
+      "monthlyPrice": "19.99",
+      "yearlyPrice": "199.99",
+      "description": "Plano premium com recursos avançados",
+      "feature1": "Exemplo de Recurso Número 1",
+      "feature2": "Exemplo de Recurso Número 2",
+      "feature3": "Exemplo de Recurso Número 3",
+      "actionLabel": "Obter Premium"
+    },
+    "planEnterprise": {
+      "title": "Enterprise",
+      "monthlyPrice": "999.99",
+      "yearlyPrice": "999.99",
+      "description": "Plano empresarial com todos os recursos",
+      "feature1": "Exemplo de Recurso Número 1",
+      "feature2": "Exemplo de Recurso Número 2",
+      "feature3": "Exemplo de Recurso Número 3",
+      "actionLabel": "Entre em Contato"
     },
     "footer": {
       "copyright": "Todos os direitos reservados.",
+      "availability": "O código-fonte está disponível em",
+      "builtBy": "Desenvolvido por",
       "privacyPolicy": "Política de Privacidade",
       "termsOfService": "Termos de Serviço",
-      "subscribePlaceholder": "Inscreva-se na nossa newsletter",
+      "subscribePlaceholder": "Inscreva-se em nosso boletim informativo",
       "subscribeButton": "Inscrever-se"
     }
   }

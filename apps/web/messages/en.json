@@ -2,66 +2,181 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome to the dashboard",
-    "tab": {
+    "tabs": {
       "history": "History",
       "chats": "Chats",
       "settings": "Settings"
     },
-    "profileButton" : {
+    "profileButton": {
       "label": "Profile",
       "menu": {
         "logout": "Logout"
       }
     }
   },
+  "login": {
+    "signInFailed": "Sign in failed!",
+    "signInFailedMessage": "Please check your email and password and try again.",
+    "email": "Email",
+    "password": "Password",
+    "forgetPassword": "Forget your password?",
+    "signInWithEmail": "Sign in with e-mail",
+    "createNewAccount": "Create new account"
+  },
+  "signUp": {
+    "signUpFailed": "Sign up failed!",
+    "signUpFailedMessage": "Please check your input and try again.",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm your password",
+    "createAccount": "Create account",
+    "alreadyRegistered": "Already registered? Sign In"
+  },
   "marketing": {
     "menu": {
       "home": "Home",
       "about": "About",
-      "pricing": "Pricing",
-      "contact": "Contact",
+      "prices": "Prices",
+      "services": "Services",
+      "testimonials": "Testimonials",
       "login": "Login",
       "sign-up": "Sign Up"
     },
     "title": "Marketing",
-    "welcome": "Welcome to the marketing",
+    "welcome": "Welcome to Marketing",
     "hero": {
-      "title": "Instant Chat Links for Seamless Conversations",
+      "title": "Links",
+      "subtitle": "For Seamless Conversations",
       "description": "QuickChat makes it effortless to create secure chat links and start conversations in seconds.",
       "button": "Start Chatting",
-      "illustrationAlt": "Illustration of a person sending a chat message"
-    },
-    "features": {
-      "instantSetup": {
-        "title": "Instant Setup",
-        "description": "Generate a room link in seconds. No account required."
-      },
-      "secure": {
-        "title": "Secure",
-        "description": "Passcode protection for your private conversations."
-      },
-      "crossPlatform": {
-        "title": "Cross-Platform",
-        "description": "Works on any device with a modern web browser."
+      "cards": {
+        "card1": {
+          "title": "This Chat is Awesome!",
+          "description": "Transform ideas into functional software that exceeds expectations."
+        },
+        "card2": {
+          "title": "History",
+          "description": "I really enjoy transforming ideas into functional software that exceeds expectations."
+        },
+        "card3": {
+          "title": "Real-time Chat",
+          "description": "Experience real-time chat and seamless communication."
+        },
+        "card4": {
+          "title": "Light & Dark Mode",
+          "description": "Join the dark side; we have coffee."
+        }
       }
     },
-    "userReviews": {
-      "sectionTitle": "What Our Users Say",
-      "reviews": [
-        {
-          "quote": "“QuickChat is a game-changer! The fastest way to start a chat.”",
-          "name": "John Doe, Developer",
-          "imageAlt": "User Avatar"
-        },
-        {
-          "quote": "“The encryption is top-notch. I feel secure using QuickChat.”",
-          "name": "Jane Smith, Designer",
-          "imageAlt": "User Avatar"
-        }
-      ]
+    "sponsors": {
+      "title": "Investors and Founders"
+    },
+    "aboutPage": {
+      "title": "About",
+      "subtitle": "Company",
+      "description": "The best startup ever"
+    },
+    "ctsPage": {
+      "title": "All Your",
+      "subtitle": "Ideas & Concepts",
+      "description1": "In One Interface",
+      "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, beatae. Ipsa tempore ipsum iste quibusdam illum ducimus eos. Quasi, sed!",
+      "button1": "Request a Demo",
+      "button2": "View All Features"
+    },
+    "testimonialsPage": {
+      "title": "Testimonials",
+      "subtitle": "What People Say",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor."
+    },
+    "statistics": {
+      "statistic1": {
+        "quantity": "2.7K+",
+        "description": "Usuários"
+      },
+      "statistic2": {
+        "quantity": "1.8K+",
+        "description": "Assinantes"
+      },
+      "statistic3": {
+        "quantity": "313",
+        "description": "Downloads"
+      },
+      "statistic4": {
+        "quantity": "665",
+        "description": "Produtos"
+      }
+    },
+    "servicesPage": {
+      "title": "Client-Centric",
+      "subtitle": "Services",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor.",
+      "serviceList": {
+        "title1": "Real-time Chat",
+        "description1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "title2": "Secure and Private",
+        "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+        "title3": "History",
+        "description3": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente."
+      }
+    },
+    "pricingHeader": {
+      "title": "Pricing Plans",
+      "subtitle": "Choose the plan that best suits you"
+    },
+    "pricingSwitch": {
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "pricingCard": {
+      "save": "Save ${amount}",
+      "perYear": "/year",
+      "perMonth": "/month",
+      "custom": "Custom"
+    },
+    "planFree": {
+      "title": "Free",
+      "monthlyPrice": "0",
+      "yearlyPrice": "0",
+      "description": "Free forever",
+      "feature1": "Example Feature Number 1",
+      "feature2": "Example Feature Number 2",
+      "actionLabel": "Get Started"
+    },
+    "planBasic": {
+      "title": "Basic",
+      "monthlyPrice": "9.99",
+      "yearlyPrice": "99.99",
+      "description": "Basic plan with essential features",
+      "feature1": "Example Feature Number 1",
+      "feature2": "Example Feature Number 2",
+      "actionLabel": "Subscribe"
+    },
+    "planPremium": {
+      "title": "Premium",
+      "monthlyPrice": "19.99",
+      "yearlyPrice": "199.99",
+      "description": "Premium plan with advanced features",
+      "feature1": "Example Feature Number 1",
+      "feature2": "Example Feature Number 2",
+      "feature3": "Example Feature Number 3",
+      "actionLabel": "Get Premium"
+    },
+    "planEnterprise": {
+      "title": "Enterprise",
+      "monthlyPrice": "999.99",
+      "yearlyPrice": "999.99",
+      "description": "Enterprise plan with all features",
+      "feature1": "Example Feature Number 1",
+      "feature2": "Example Feature Number 2",
+      "feature3": "Example Feature Number 3",
+      "actionLabel": "Contact Us"
     },
     "footer": {
       "copyright": "All rights reserved.",
+      "availability": "The source code is available on",
+      "builtBy": "Built by",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "subscribePlaceholder": "Subscribe to our newsletter",

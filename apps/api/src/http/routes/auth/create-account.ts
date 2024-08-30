@@ -30,7 +30,10 @@ export async function createAccount(app: FastifyInstance) {
         },
       })
 
+      console.log('userWithSameEmail', userWithSameEmail)
+
       if (userWithSameEmail) {
+        console.log('User with this email already exists')
         throw new BadRequestError('User with this email already exists')
       }
 
@@ -40,7 +43,7 @@ export async function createAccount(app: FastifyInstance) {
         data: {
           name,
           email,
-          passwordHash
+          passwordHash,
         },
       })
 

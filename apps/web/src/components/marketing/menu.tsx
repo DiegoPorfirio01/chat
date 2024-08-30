@@ -1,22 +1,27 @@
 'use client'
 
-import gsap from 'gsap'
-import { useTranslations } from 'next-intl'
-import React, { useEffect, useRef, useState } from 'react'
-
-import { marketingMenu } from '@/config/menus'
+import React, { useRef, useState, useEffect } from 'react';
+import gsap from 'gsap';
+import { useLocale, useTranslations } from 'next-intl';
+import { marketingMenu, menuMobile } from '@/config/menus';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const MarketingMenu = () => {
-  return <SlideTabs />
-}
+  return (
+    <SlideTabs />
+  );
+};
 
 const SlideTabs = () => {
   const [position, setPosition] = useState({
     left: 0,
     width: 0,
     opacity: 0,
-  })
-  const t = useTranslations('marketing.menu')
+  });
+  const t = useTranslations('marketing.menu');
+  const locale = useLocale();
+  const pathname = usePathname();
 
   useEffect(() => {
     gsap.to('.cursor', {
@@ -26,8 +31,8 @@ const SlideTabs = () => {
       opacity: position.opacity,
       ease: 'power3.out',
       overwrite: 'auto',
-    })
-  }, [position])
+    });
+  }, [position]);
 
   return (
     <ul
@@ -35,48 +40,82 @@ const SlideTabs = () => {
         setPosition((pv) => ({
           ...pv,
           opacity: 0,
-        }))
+        }));
       }}
-      className="relative mx-auto hidden w-fit rounded-full border-2 border-black bg-white p-1 sm:flex"
+      className="w-fit mb-3 sm:mb-0 rounded-full border-2 border-black bg-white p-0.5 flex relative"
     >
-      {marketingMenu.map((item) => (
-        <Tab key={item.href} setPosition={setPosition}>
-          {t(item.title.toLocaleLowerCase())}
-        </Tab>
-      ))}
+      <div className='hidden sm:flex'>
+        {marketingMenu.map((item) => (
+          <Tab
+            key={item.href}
+            setPosition={setPosition}
+            isActive={pathname === `/${locale}${item.href}`}
+          > 
+            <Link href={`/${locale}${item.href}`}>
+              {t(item.title.toLocaleLowerCase())}
+            </Link>
+          </Tab>
+        ))}
+      </div>
+      <div className='sm:hidden flex'>
+        {menuMobile.map((item) => (
+          <Tab
+            key={item.href}
+            setPosition={setPosition}
+            isActive={pathname === `/${locale}${item.href}`}
+          > 
+            <Link href={`/${locale}${item.href}`}
+            >
+              {t(item.title.toLocaleLowerCase())}
+            </Link>
+          </Tab>
+        ))}
+      </div>
       <Cursor />
     </ul>
-  )
-}
+  );
+};
 
-const Tab = ({ children, setPosition }) => {
-  const ref = useRef(null)
+const Tab = ({ children, setPosition, isActive }) => {
+  const ref = useRef(null);
 
   return (
-    <li
+    <li 
       ref={ref}
       onMouseEnter={() => {
-        if (!ref.current) return
-
-        const { width, left } = ref.current.getBoundingClientRect()
-        const parentLeft =
-          ref.current.parentElement.getBoundingClientRect().left
+        if (!ref.current) return;
+        const { width, left } = ref.current.getBoundingClientRect();
+        const parentLeft = ref.current.parentElement.getBoundingClientRect().left;
 
         setPosition({
           left: left - parentLeft,
           width,
-          opacity: 1,
-        })
+          opacity: 0.5,
+        });
       }}
-      className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-1 md:text-base"
+      style={{
+        position: 'relative',
+        zIndex: 10,
+        display: 'block',
+        cursor: 'pointer',
+        textTransform: 'uppercase',
+        backgroundColor: isActive ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
+        color: 'black',
+        borderRadius: '9999px',
+        transition: 'background-color 0.3s ease, color 0.3s ease', 
+      }}
+      className="py-1.5 px-4"
     >
       {children}
     </li>
-  )
-}
+  );
+};
 
 const Cursor = () => {
   return (
-    <li className="cursor absolute z-0 h-7 rounded-full bg-black md:h-[32px]" />
-  )
-}
+    <li
+      className="cursor absolute z-0 h-8 rounded-full bg-black md:h-[32px]"
+      style={{ transition: 'all 0.3s ease' }}
+    />
+  );
+};

@@ -1,6 +1,6 @@
 import { env } from '@chat/env'
 
-import type { I18nConfig, SiteConfig } from '@/@types'
+import type { I18nConfig, Review, SiteConfig } from '@/@types'
 
 export const i18nConfig: I18nConfig = {
   locales: ['en', 'es', 'pt-br'] as const,
@@ -24,13 +24,30 @@ export const siteConfig: SiteConfig = {
   url: `${env.NEXT_PUBLIC_APP_URL}`,
 }
 
-export const reviews = [
+export const marketingReviewUsers: Review[] = [
   {
-    quote: '“QuickChat is a game-changer! The fastest way to start a chat.”',
-    name: 'John Doe, Developer',
+    name: 'Chat Lucy',
+    quote: 'This product exceeded my expectations! The quality is top-notch and the customer service was exceptional. Highly recommended!',
+    avatarUrl: 'https://github.com/diegoporfirio01.png'
   },
   {
-    quote: '“The encryption is top-notch. I feel secure using QuickChat.”',
-    name: 'Jane Smith, Designer',
+    name: 'Bob Brown',
+    quote: 'A fantastic experience from start to finish. The attention to detail and the ease of use made this a must-have for our team.',
+    avatarUrl: 'https://avatars.githubusercontent.com/u/2345678?v=4'
   },
+  {
+    name: 'Emily Davis',
+    quote: 'I was impressed by how well this product solved our needs. It’s intuitive and efficient, and the support team was incredibly helpful.',
+    avatarUrl: 'https://avatars.githubusercontent.com/u/3456789?v=4'
+  },
+  {
+    name: 'Michael Wilson',
+    quote: 'Excellent value for the price. The features are exactly what we were looking for, and the setup was a breeze. Will definitely continue using it.',
+    avatarUrl: 'https://avatars.githubusercontent.com/u/4567890?v=4'
+  },
+  {
+    name: 'Sarah Lee',
+    quote: 'An outstanding tool that has significantly improved our workflow. It’s reliable and user-friendly. I can’t imagine working without it.',
+    avatarUrl: 'https://avatars.githubusercontent.com/u/5678901?v=4'
+  }
 ]

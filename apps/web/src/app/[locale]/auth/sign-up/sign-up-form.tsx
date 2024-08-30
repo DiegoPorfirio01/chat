@@ -11,81 +11,86 @@ import { Label } from '@/components/ui/label'
 import { useFormState } from '@/hooks/useFormState'
 
 import { signUpAction } from './actions'
+import { useLocale, useTranslations } from 'next-intl'
 
 export function SignUpForm() {
   const router = useRouter()
+  const locale = useLocale()
+  const t = useTranslations('signUp')
 
   const [{ success, message, errors }, handleSubmit, isPending] = useFormState(
     signUpAction,
     () => {
-      router.push('/dashboard')
+      router.push(`${locale}/dashboard`)
     },
   )
+
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-4">
         {success === false && message && (
           <Alert variant={'destructive'}>
             <AlertTriangle className="size-4" />
-            <AlertTitle>Sign in failed !</AlertTitle>
+            <AlertTitle>{t('signUpFailed')}</AlertTitle>
             <AlertDescription>
-              <p>{message}</p>
+              {message}
             </AlertDescription>
           </Alert>
         )}
         <div className="space-y-1">
-          <Label htmlFor="name">Name</Label>
-          <Input name="name" type="name" id="name" />
+          <Label htmlFor="name">{t('name')}</Label>
+          <Input name="name" type="text" id="name" />
+          {errors?.name && (
+            <p className="text-xs font-medium text-red-500 dark:text-red-400">
+              {errors.name[0]}
+            </p>
+          )}
         </div>
-        {errors?.name && (
-          <p className="text-xs font-medium text-red-500 dark:text-red-400">
-            {errors.name[0]}
-          </p>
-        )}
 
         <div className="space-y-1">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('email')}</Label>
           <Input name="email" type="email" id="email" />
+          {errors?.email && (
+            <p className="text-xs font-medium text-red-500 dark:text-red-400">
+              {errors.email[0]}
+            </p>
+          )}
         </div>
-        {errors?.email && (
-          <p className="text-xs font-medium text-red-500 dark:text-red-400">
-            {errors.email[0]}
-          </p>
-        )}
 
         <div className="space-y-1">
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">{t('password')}</Label>
           <Input name="password" type="password" id="password" />
+          {errors?.password && (
+            <p className="text-xs font-medium text-red-500 dark:text-red-400">
+              {errors.password[0]}
+            </p>
+          )}
         </div>
-        {errors?.password && (
-          <p className="text-xs font-medium text-red-500 dark:text-red-400">
-            {errors.password[0]}
-          </p>
-        )}
+
         <div className="space-y-1">
-          <Label htmlFor="password_confirmation">Confirm your password</Label>
+          <Label htmlFor="password_confirmation">{t('confirmPassword')}</Label>
           <Input
             name="password_confirmation"
             type="password"
             id="password_confirmation"
           />
+          {errors?.password_confirmation && (
+            <p className="text-xs font-medium text-red-500 dark:text-red-400">
+              {errors.password_confirmation[0]}
+            </p>
+          )}
         </div>
-        {errors?.password_confirmation && (
-          <p className="text-xs font-medium text-red-500 dark:text-red-400">
-            {errors.password_confirmation[0]}
-          </p>
-        )}
 
         <Button disabled={isPending} className="w-full">
           {isPending ? (
             <Loader2 className="size-4 animate-spin" />
           ) : (
-            'Create account'
+            t('createAccount')
           )}
         </Button>
 
         <Button className="w-full" size={'sm'} variant={'link'} asChild>
-          <Link href={'/auth/sign-in'}>Already registered ? Sign In</Link>
+          <Link href={`/${locale}/auth/sign-in`}>{t('alreadyRegistered')}</Link>
         </Button>
       </form>
     </>
