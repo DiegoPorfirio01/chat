@@ -61,6 +61,9 @@ Para rodar o projeto localmente, siga estes passos:
 - **Construir:** `pnpm run build` - Gera a versão de produção.
 - **Linter:** `pnpm run lint` - Executa o linter para verificar o código.
 
+## Nota
+  Pode haveer erro no console em função do radix ainda não ter atualizado as referências dos componentes para o novo hook useRef 
+
 ## 📝 Licença
 
 Este projeto está licenciado sob a Licença MIT.
