@@ -21,6 +21,7 @@ import { setupSocket } from '@/socket'
 import { consumeMessages } from '@/utils'
 
 import { errorHandler } from './error-handler'
+import { auth } from './middlewares/auth'
 import { authenticateWithPassword } from './routes/auth/authenticate-with-password'
 import { createAccount } from './routes/auth/create-account'
 import { getProfile } from './routes/auth/get-profile'
@@ -105,6 +106,9 @@ app.setErrorHandler(errorHandler)
 app.register(fastifyJwt, {
   secret: env.JWT_SECRET,
 })
+
+app.register(auth)
+
 app.register(createAccount)
 app.register(getProfile)
 
