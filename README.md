@@ -45,15 +45,25 @@ Para rodar o projeto localmente, siga estes passos:
         - sugiro que utilize esse serviço para o banco postgre : https://neon.tech/app
         - ambos são init free (como não tive tempo de fazer a infra, utilizei eles)
 
-3. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
+3. **Iniciar do postgre e o Redis:** Na raiz do projeto, execute:
+    ```bash
+    docker-compose up -d
+    ```
+4. **Gerar schema Prisma:** acesse /apps/api
+    rode o comando:
+    ```bash
+    pnpm run db:migrate
+    ```
+
+5. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
 
     ```bash
     pnpm run dev
     ```
 
-4. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
+6. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
 
-5. **Acesse o sistema:** Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para usar a aplicação!
+7. **Acesse o sistema:** Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para usar a aplicação!
 
 ## 🛠️ Scripts
 
