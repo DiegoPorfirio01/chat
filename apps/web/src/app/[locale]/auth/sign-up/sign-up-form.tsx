@@ -3,6 +3,7 @@
 import { AlertTriangle, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import { Button } from '@/components/ui/button'
@@ -11,7 +12,6 @@ import { Label } from '@/components/ui/label'
 import { useFormState } from '@/hooks/useFormState'
 
 import { signUpAction } from './actions'
-import { useLocale, useTranslations } from 'next-intl'
 
 export function SignUpForm() {
   const router = useRouter()
@@ -32,9 +32,7 @@ export function SignUpForm() {
           <Alert variant={'destructive'}>
             <AlertTriangle className="size-4" />
             <AlertTitle>{t('signUpFailed')}</AlertTitle>
-            <AlertDescription>
-              {message}
-            </AlertDescription>
+            <AlertDescription>{message}</AlertDescription>
           </Alert>
         )}
         <div className="space-y-1">

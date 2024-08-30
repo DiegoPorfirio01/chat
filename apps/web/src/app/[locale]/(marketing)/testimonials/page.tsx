@@ -1,16 +1,16 @@
 import { getMessages } from 'next-intl/server'
 
+import { About } from '@/components/marketing/about'
+import { Cta } from '@/components/marketing/cts'
 import FeatureSection from '@/components/marketing/feature'
 import Footer from '@/components/marketing/footer'
 import HeroSection from '@/components/marketing/hero'
-import UserReviews from '@/components/marketing/users-review'
-import TransitionFadeIn from '@/components/transition-fade-in'
 import PricingTable from '@/components/marketing/pricing-table'
-import { Sponsors } from '@/components/marketing/sponsors'
-import { About } from '@/components/marketing/about'
 import { Services } from '@/components/marketing/services'
-import { Cta } from '@/components/marketing/cts'
+import { Sponsors } from '@/components/marketing/sponsors'
+import UserReviews from '@/components/marketing/users-review'
 import { UsersReviewCards } from '@/components/marketing/users-review-cards'
+import TransitionFadeIn from '@/components/transition-fade-in'
 
 export async function generateMetadata({
   params: { locale },
@@ -26,11 +26,11 @@ export async function generateMetadata({
 }
 
 export default function PricesPage() {
-return (
+  return (
     <TransitionFadeIn>
-      <div className='mx-auto max-w-[1200px] p-4'>
+      <div className="mx-auto max-w-[1200px] p-4">
         <UsersReviewCards />
-      </div>  
+      </div>
     </TransitionFadeIn>
   )
 }

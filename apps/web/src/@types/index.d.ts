@@ -54,46 +54,46 @@ export type PricingCardProps = {
 }
 
 interface Review {
-  name: string;
-  quote: string;
-  avatarUrl: string;
+  name: string
+  quote: string
+  avatarUrl: string
 }
 
-type GroupChatType = { 
-  id: string;
-  userId: number;
-  title: string;
-  passcode: string;
-  createdAt: string;
-  open: boolean;
-};
+type GroupChatType = {
+  id: string
+  userId: number
+  title: string
+  passcode: string
+  createdAt: string
+  open: boolean
+}
 
 type GroupChatsType = {
-  groups: GroupChatType[];
-};
+  groups: GroupChatType[]
+}
 
 type GroupChatUserType = {
-  id: number;
-  name: string;
-  groupId: string;
-  createdAt: string;
-  isOnline?: boolean;
-};
+  id: number
+  name: string
+  groupId: string
+  createdAt: string
+  isOnline?: boolean
+}
 
 type MessageType = {
-  id: string;
-  message: string;
-  groupId: string;
-  name: string;
-  createdAt: string;
-};
+  id: string
+  message: string
+  groupId: string
+  name: string
+  createdAt: string
+}
 
 type MessagesType = {
-  chats: MessageType[];
-};
+  chats: MessageType[]
+}
 
 export interface User {
-  id?: string | null;
-  name?: string | null;
-  email?: string | null;
+  id?: string | null
+  name?: string | null
+  email?: string | null
 }

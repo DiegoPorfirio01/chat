@@ -1,27 +1,28 @@
-"use client";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+'use client'
+import { zodResolver } from '@hookform/resolvers/zod'
+import React, { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+
+import { clearCache } from '@/actions/common'
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { api } from '@/http/api-client'
 import {
   createChatSchema,
   createChatSchemaType,
-} from "@/validations/chatSchema";
-import { toast } from "sonner";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { clearCache } from "@/actions/common";
-import { api } from "@/http/api-client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+} from '@/validations/chatSchema'
 
 export default function CreateChat() {
-  const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const {
     register,
@@ -29,27 +30,27 @@ export default function CreateChat() {
     formState: { errors },
   } = useForm<createChatSchemaType>({
     resolver: zodResolver(createChatSchema),
-  });
+  })
 
-  const onSubmit = async ({title, passcode}: createChatSchemaType) => {
-    setLoading(true);
+  const onSubmit = async ({ title, passcode }: createChatSchemaType) => {
+    setLoading(true)
     try {
       await api.post('chat-group', {
         json: {
           title,
           passcode,
         },
-      });
-      clearCache("dashboardChatGroups");
-      setOpen(false);
-      toast.success("Chat group created successfully");
+      })
+      clearCache('dashboardChatGroups')
+      setOpen(false)
+      toast.success('Chat group created successfully')
     } catch (error) {
-      console.error("Error creating chat group:", error);
-      toast.error("Failed to create chat group. Please try again.");
+      console.error('Error creating chat group:', error)
+      toast.error('Failed to create chat group. Please try again.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -62,20 +63,20 @@ export default function CreateChat() {
         </DialogHeader>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-4">
-            <Input placeholder="Enter chat title" {...register("title")} />
+            <Input placeholder="Enter chat title" {...register('title')} />
             <span className="text-red-400">{errors.title?.message}</span>
           </div>
           <div className="mt-4">
-            <Input placeholder="Enter passcode" {...register("passcode")} />
+            <Input placeholder="Enter passcode" {...register('passcode')} />
             <span className="text-red-400">{errors.passcode?.message}</span>
           </div>
           <div className="mt-4">
             <Button className="w-full" disabled={loading}>
-              {loading ? "Processing.." : "Submit"}
+              {loading ? 'Processing..' : 'Submit'}
             </Button>
           </div>
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

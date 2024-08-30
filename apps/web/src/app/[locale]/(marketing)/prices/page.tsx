@@ -1,12 +1,12 @@
 import { getMessages } from 'next-intl/server'
 
+import { Cta } from '@/components/marketing/cts'
 import FeatureSection from '@/components/marketing/feature'
 import Footer from '@/components/marketing/footer'
 import HeroSection from '@/components/marketing/hero'
+import PricingTable from '@/components/marketing/pricing-table'
 import UserReviews from '@/components/marketing/users-review'
 import TransitionFadeIn from '@/components/transition-fade-in'
-import PricingTable from '@/components/marketing/pricing-table'
-import { Cta } from '@/components/marketing/cts'
 
 export async function generateMetadata({
   params: { locale },
@@ -22,11 +22,11 @@ export async function generateMetadata({
 }
 
 export default function PricesPage() {
-return (
+  return (
     <TransitionFadeIn>
-      <div className='mx-auto max-w-[1200px] p-4'>
+      <div className="mx-auto max-w-[1200px] p-4">
         <PricingTable />
-      </div>  
+      </div>
       <Cta />
     </TransitionFadeIn>
   )

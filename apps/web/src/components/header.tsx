@@ -4,13 +4,13 @@ import { ArrowLeftSquare, Slash } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useLocale } from 'next-intl'
 
 import Logo from '@/app/favicon.ico'
 
 import { LocaleSwitch } from './locale-switch'
 import { MarketingMenu } from './marketing/menu'
 import { ThemeSwitcher } from './theme/theme-switcher'
-import { useLocale } from 'next-intl'
 
 export default async function Header() {
   const language = useLocale()
@@ -24,17 +24,17 @@ export default async function Header() {
   ]
 
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
-      <div className='sm:mx-auto mx-0 flex max-w-[1200px] items-center justify-between'>
-        <div className="flex items-center gap-3 min-w-10 ml-5 sm:ml-0">
+    <header className="sticky top-0 z-40 w-full border-b-[1px] bg-white dark:border-b-slate-700 dark:bg-background">
+      <div className="mx-0 flex max-w-[1200px] items-center justify-between sm:mx-auto">
+        <div className="ml-5 flex min-w-10 items-center gap-3 sm:ml-0">
           <Image
             src={Logo}
             className="size-8 border border-black dark:border dark:border-white"
             alt="logo"
           />
         </div>
-        {(!pathname.includes('auth') && !pathname.includes('dashboard')) && (
-          <div className="justify-center w-full items-center gap-3 flex fixed bottom-0 sm:relative">
+        {!pathname.includes('auth') && !pathname.includes('dashboard') && (
+          <div className="fixed bottom-0 flex w-full items-center justify-center gap-3 sm:relative">
             <MarketingMenu />
           </div>
         )}
@@ -44,7 +44,7 @@ export default async function Header() {
           {shouldHaveArrowBack.some((href) => pathname.includes(href)) && (
             <Link href={`/${language}`} className="flex items-center gap-1">
               <ArrowLeftSquare className="size-6" />
-            </Link> 
+            </Link>
           )}
         </div>
       </div>

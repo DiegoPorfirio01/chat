@@ -4,6 +4,7 @@ import { AlertTriangle, Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLocale, useTranslations } from 'next-intl'
 
 import githubIcon from '@/assets/github-icon.svg'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -14,7 +15,6 @@ import { Separator } from '@/components/ui/separator'
 import { useFormState } from '@/hooks/useFormState'
 
 import { signInWithEmailAndPassoword } from './actions'
-import { useLocale, useTranslations } from 'next-intl'
 
 export function SignInForm() {
   const router = useRouter()

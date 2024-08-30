@@ -20,7 +20,9 @@ const Tabs = () => {
             className="border border-transparent text-muted-foreground data-[current=true]:border-border data-[current=true]:text-foreground"
             key={item.href}
           >
-            <NavLink href={`/${locale}${item.href}`}>{t(item.title.toLowerCase())}</NavLink>
+            <NavLink href={`/${locale}${item.href}`}>
+              {t(item.title.toLowerCase())}
+            </NavLink>
           </Button>
         ))}
       </nav>

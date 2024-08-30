@@ -10,7 +10,7 @@ export function isAuthenticated() {
 export async function getCurrentToken() {
   try {
     const token = cookies().get('token')?.value
-    
+
     return token
   } catch (error) {}
 }

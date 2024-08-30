@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
 
 import { Button } from '@/components/ui/button'
 import ErrorImage from '@/public/images/error.svg'
-import { useLocale } from 'next-intl'
 
 export default function NotFound() {
   return (

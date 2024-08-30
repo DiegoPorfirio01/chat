@@ -1,7 +1,7 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import { toast } from "sonner";
-import { clearCache } from "@/actions/common";
-import { api } from "@/http/api-client";
+import React, { Dispatch, SetStateAction, useState } from 'react'
+import { toast } from 'sonner'
+
+import { clearCache } from '@/actions/common'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,33 +11,34 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+} from '@/components/ui/alert-dialog'
+import { api } from '@/http/api-client'
 
 export default function DeleteChatGroup({
   open,
   setOpen,
   groupId,
 }: {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  groupId: string;
+  open: boolean
+  setOpen: Dispatch<SetStateAction<boolean>>
+  groupId: string
 }) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
 
   const deleteChatGroup = async () => {
-    setLoading(true);
+    setLoading(true)
     try {
-      await api.delete(`chat-group/${groupId}`);
-      clearCache("dashboardChatGroups");
-      toast.success('Chat group deleted successfully');
+      await api.delete(`chat-group/${groupId}`)
+      clearCache('dashboardChatGroups')
+      toast.success('Chat group deleted successfully')
     } catch (error) {
-      console.error("Error deleting chat group:", error);
-      toast.error('Failed to delete chat group. Please try again.');
+      console.error('Error deleting chat group:', error)
+      toast.error('Failed to delete chat group. Please try again.')
     } finally {
-      setLoading(false);
-      setOpen(false); // Close the dialog regardless of success or failure
+      setLoading(false)
+      setOpen(false) // Close the dialog regardless of success or failure
     }
-  };
+  }
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
@@ -52,10 +53,10 @@ export default function DeleteChatGroup({
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <AlertDialogAction disabled={loading} onClick={deleteChatGroup}>
-            {loading ? "Processing.." : "Continue"}
+            {loading ? 'Processing..' : 'Continue'}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  );
+  )
 }

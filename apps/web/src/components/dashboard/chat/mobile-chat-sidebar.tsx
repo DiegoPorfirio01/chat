@@ -1,19 +1,20 @@
-"use client";
-import React from "react";
+'use client'
+import { MenuIcon } from 'lucide-react'
+import React from 'react'
+
+import type { GroupChatUserType } from '@/@types'
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import type { GroupChatUserType } from "@/@types";
-import { MenuIcon } from "lucide-react";
+} from '@/components/ui/sheet'
 
 export default function MobileChatSidebar({
   users,
 }: {
-  users: Array<GroupChatUserType> | [];
+  users: Array<GroupChatUserType> | []
 }) {
   return (
     <Sheet>
@@ -27,10 +28,10 @@ export default function MobileChatSidebar({
         <div>
           {users.length > 0 &&
             users.map((item, index) => (
-              <div key={index} className="bg-white rounded-md p-2 mt-2">
+              <div key={index} className="mt-2 rounded-md bg-white p-2">
                 <p className="font-bold"> {item.name}</p>
                 <p>
-                  Joined :{" "}
+                  Joined :{' '}
                   <span>{new Date(item.createdAt).toDateString()}</span>
                 </p>
               </div>
@@ -38,5 +39,5 @@ export default function MobileChatSidebar({
         </div>
       </SheetContent>
     </Sheet>
-  );
+  )
 }

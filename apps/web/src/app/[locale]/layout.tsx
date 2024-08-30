@@ -1,5 +1,5 @@
 import '../globals.css'
-import "../index.css"
+import '../index.css'
 
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
@@ -8,12 +8,12 @@ import { getMessages } from 'next-intl/server'
 import type { ReactNode } from 'react'
 import { Toaster } from 'sonner'
 
+import Footer from '@/components/marketing/footer'
 import TopLoader from '@/components/top-loader'
 import { siteConfig } from '@/config/app'
 import { cn } from '@/lib/utils'
 
 import { Providers } from '../providers'
-import Footer from '@/components/marketing/footer'
 
 export const metadata: Metadata = {
   title: {
@@ -51,9 +51,7 @@ export default async function LocaleLayout({
         <TopLoader />
         <Providers>
           <NextIntlClientProvider messages={messages}>
-            <div className='min-h-screen'>
-              {children}
-            </div>
+            <div className="min-h-screen">{children}</div>
           </NextIntlClientProvider>
           <Footer />
           <Toaster richColors duration={5000} />

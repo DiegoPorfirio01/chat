@@ -1,16 +1,14 @@
-import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import GroupChatCardMenu from "./group-chat-card-menu";
-import type { GroupChatType } from "@/@types";
+import React from 'react'
 
-export default function GroupChatCard({
-  group,
-}: {
-  group: GroupChatType;
-}) {
+import type { GroupChatType } from '@/@types'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+
+import GroupChatCardMenu from './group-chat-card-menu'
+
+export default function GroupChatCard({ group }: { group: GroupChatType }) {
   return (
     <Card>
-      <CardHeader className="flex-row justify-between items-center ">
+      <CardHeader className="flex-row items-center justify-between ">
         <CardTitle className="text-2xl">{group.title}</CardTitle>
         <GroupChatCardMenu group={group} />
       </CardHeader>
@@ -21,5 +19,5 @@ export default function GroupChatCard({
         <p>Created At : {new Date(group.createdAt).toDateString()}</p>
       </CardContent>
     </Card>
-  );
+  )
 }

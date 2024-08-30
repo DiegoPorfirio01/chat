@@ -46,7 +46,7 @@ export const marketingMenu: MarketingMenu = [
   },
 ]
 
-export const menuMobile : MarketingMenu = [
+export const menuMobile: MarketingMenu = [
   {
     title: 'home',
     href: '/',

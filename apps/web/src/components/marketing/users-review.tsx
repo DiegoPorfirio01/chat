@@ -1,6 +1,6 @@
 import React from 'react'
-import { UsersReviewCards } from './users-review-cards'
 
+import { UsersReviewCards } from './users-review-cards'
 
 export default function UserReviews() {
   return (

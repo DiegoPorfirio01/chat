@@ -1,6 +1,7 @@
 import { getMessages } from 'next-intl/server'
-import TransitionFadeIn from '@/components/transition-fade-in'
+
 import { Services } from '@/components/marketing/services'
+import TransitionFadeIn from '@/components/transition-fade-in'
 
 export async function generateMetadata({
   params: { locale },
@@ -16,7 +17,7 @@ export async function generateMetadata({
 }
 
 export default function PricesPage() {
-return (
+  return (
     <TransitionFadeIn>
       <Services />
     </TransitionFadeIn>

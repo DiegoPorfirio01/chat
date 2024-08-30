@@ -1,70 +1,70 @@
-"use client";
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+'use client'
+import { useParams } from 'next/navigation'
+import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { toast } from 'sonner'
+
+import type { GroupChatType } from '@/@types'
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { useParams } from "next/navigation";
-import { toast } from "sonner";
-import type { GroupChatType } from "@/@types";
-import { api } from "@/http/api-client";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { api } from '@/http/api-client'
 
 export default function ChatUserDialog({
   open,
   setOpen,
   group,
 }: {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  group: GroupChatType;
+  open: boolean
+  setOpen: Dispatch<SetStateAction<boolean>>
+  group: GroupChatType
 }) {
-  const params = useParams();
+  const params = useParams()
   const [state, setState] = useState({
-    name: "",
-    passcode: "",
-  });
+    name: '',
+    passcode: '',
+  })
 
   useEffect(() => {
-    const data = localStorage.getItem(params["id"] as string);
+    const data = localStorage.getItem(params.id as string)
     if (data) {
-      const jsonData = JSON.parse(data);
+      const jsonData = JSON.parse(data)
       if (jsonData?.name && jsonData?.groupId) {
-        setOpen(false);
+        setOpen(false)
       }
     }
-  }, []);
+  }, [])
 
   const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    const localData = localStorage.getItem(params["id"] as string);
+    event.preventDefault()
+    const localData = localStorage.getItem(params.id as string)
     if (!localData) {
       try {
-        const user  = await  api.post('chat-group-users', {
-          json: {
-            name: state.name,
-            groupId: params["id"] as string,
-          },
-        }).json();
+        const user = await api
+          .post('chat-group-users', {
+            json: {
+              name: state.name,
+              groupId: params.id as string,
+            },
+          })
+          .json()
 
-        localStorage.setItem(
-          params["id"] as string,
-          JSON.stringify(user)
-        );
+        localStorage.setItem(params.id as string, JSON.stringify(user))
       } catch (error) {
-        toast.error("Something went wrong.please try again!");
+        toast.error('Something went wrong.please try again!')
       }
     }
     if (group.passcode != state.passcode) {
-      toast.error("Please enter correct passcode!");
+      toast.error('Please enter correct passcode!')
     } else {
-      setOpen(false);
+      setOpen(false)
     }
-  };
+  }
 
   return (
     <Dialog open={open}>
@@ -96,5 +96,5 @@ export default function ChatUserDialog({
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

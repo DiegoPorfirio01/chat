@@ -1,4 +1,5 @@
 import '../globals.css'
+
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -16,9 +17,7 @@ export default function NotFoundLayout({
   return (
     <>
       <html>
-        <body>
-          {children}
-        </body>
+        <body>{children}</body>
       </html>
     </>
   )

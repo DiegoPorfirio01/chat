@@ -1,13 +1,14 @@
 import { getMessages } from 'next-intl/server'
-import HeroSection from '@/components/marketing/hero'
-import UserReviews from '@/components/marketing/users-review'
-import TransitionFadeIn from '@/components/transition-fade-in'
-import PricingTable from '@/components/marketing/pricing-table'
-import { Sponsors } from '@/components/marketing/sponsors'
+
 import { About } from '@/components/marketing/about'
-import { Services } from '@/components/marketing/services'
 import { Cta } from '@/components/marketing/cts'
+import HeroSection from '@/components/marketing/hero'
+import PricingTable from '@/components/marketing/pricing-table'
+import { Services } from '@/components/marketing/services'
+import { Sponsors } from '@/components/marketing/sponsors'
+import UserReviews from '@/components/marketing/users-review'
 import { ScrollToTop } from '@/components/scroll-to-up'
+import TransitionFadeIn from '@/components/transition-fade-in'
 
 export async function generateMetadata({
   params: { locale },
@@ -23,19 +24,19 @@ export async function generateMetadata({
 }
 
 export default function Home() {
-return (
+  return (
     <TransitionFadeIn>
-      <div className='mx-auto max-w-[1200px] p-4'>
+      <div className="mx-auto max-w-[1200px] p-4">
         <HeroSection />
         <Sponsors />
         <About />
         <Services />
       </div>
       <Cta />
-      <div className='mx-auto max-w-[1200px] p-4'>
+      <div className="mx-auto max-w-[1200px] p-4">
         <PricingTable />
         <UserReviews />
-      </div>  
+      </div>
       <ScrollToTop />
     </TransitionFadeIn>
   )
