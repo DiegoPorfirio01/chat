@@ -50,6 +50,6 @@ export async function createAccount(app: FastifyInstance) {
       return reply.status(201).send({
         message: 'User created',
       })
-    },
+    }
   )
 }

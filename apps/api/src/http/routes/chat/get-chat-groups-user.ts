@@ -25,7 +25,7 @@ export async function getChatGroupsUser(app: FastifyInstance) {
                 groupId: z.string().uuid(),
                 name: z.string(),
                 createdAt: z.date(),
-              }),
+              })
             ),
           }),
         },
@@ -45,6 +45,6 @@ export async function getChatGroupsUser(app: FastifyInstance) {
       }
 
       return { groupsUser }
-    },
+    }
   )
 }

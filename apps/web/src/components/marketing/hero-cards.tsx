@@ -2,7 +2,6 @@ import { AvatarFallback } from '@radix-ui/react-avatar'
 import { Check, LightbulbIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
-import { Button, buttonVariants } from '@/components/ui/button'
 import {
   Card,
   CardContent,

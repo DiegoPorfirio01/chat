@@ -36,26 +36,25 @@ Para rodar o projeto localmente, siga estes passos:
 
 1. **Instale as dependências:**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
 2. **Configure as variáveis de ambiente:** Copie e renomeie o arquivo `.env.example` para `.env` na raiz do projeto e preencha as variáveis necessárias. Validações estão implementadas para garantir que todas as variáveis estejam corretas.
-  OBS:  - sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted
-        - sugiro que utilize esse serviço para o banco postgre : https://neon.tech/app
-        - ambos são init free (como não tive tempo de fazer a infra, utilizei eles)
+   OBS: - sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted - sugiro que utilize esse serviço para o banco postgre : https://neon.tech/app - ambos são init free (como não tive tempo de fazer a infra, utilizei eles)
 
 3. **Gerar schema Prisma:** acesse /apps/api
-    rode o comando:
-    ```bash
-    pnpm run db:migrate
-    ```
+   rode o comando:
+
+   ```bash
+   pnpm run db:migrate
+   ```
 
 4. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
 
-    ```bash
-    pnpm run dev
-    ```
+   ```bash
+   pnpm run dev
+   ```
 
 5. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
 
@@ -68,7 +67,8 @@ Para rodar o projeto localmente, siga estes passos:
 - **Linter:** `pnpm run lint` - Executa o linter para verificar o código.
 
 ## Nota
-  Pode haveer erro no console em função do radix ainda não ter atualizado as referências dos componentes para o novo hook useRef 
+
+Pode haveer erro no console em função do radix ainda não ter atualizado as referências dos componentes para o novo hook useRef
 
 ## 📝 Licença
 

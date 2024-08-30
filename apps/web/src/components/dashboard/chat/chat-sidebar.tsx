@@ -1,12 +1,6 @@
 import React from 'react'
 
-import type { GroupChatUserType } from '@/@types'
-
-export default function ChatSidebar({
-  users,
-}: {
-  users: Array<GroupChatUserType> | []
-}) {
+export default function ChatSidebar({ users }: { users }) {
   return (
     <div className="hidden h-screen w-1/5 overflow-y-scroll bg-muted px-2 md:block">
       <h1 className="py-4 text-2xl font-extrabold ">Members</h1>

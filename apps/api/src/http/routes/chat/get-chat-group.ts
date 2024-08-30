@@ -42,6 +42,6 @@ export async function getChatGroup(app: FastifyInstance) {
       }
 
       return group
-    },
+    }
   )
 }

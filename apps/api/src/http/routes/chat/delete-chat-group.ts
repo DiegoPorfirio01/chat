@@ -36,6 +36,6 @@ export async function deleteChatGroup(app: FastifyInstance) {
       } catch (error) {
         throw new BadRequestError('Failed to create group')
       }
-    },
+    }
   )
 }

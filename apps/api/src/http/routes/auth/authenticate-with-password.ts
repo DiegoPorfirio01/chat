@@ -38,13 +38,13 @@ export async function authenticateWithPassword(app: FastifyInstance) {
 
       if (userFromEmail.passwordHash === null) {
         throw new BadRequestError(
-          'User does not have a password, use social login',
+          'User does not have a password, use social login'
         )
       }
 
       const isPasswordValid = await compare(
         password,
-        userFromEmail.passwordHash,
+        userFromEmail.passwordHash
       )
 
       if (!isPasswordValid) {
@@ -59,7 +59,7 @@ export async function authenticateWithPassword(app: FastifyInstance) {
           sign: {
             expiresIn: '7d',
           },
-        },
+        }
       )
 
       return reply.status(200).send({

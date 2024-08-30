@@ -1,14 +1,8 @@
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import React from 'react'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { siteConfig } from '@/config/app'
-
 export default function Footer() {
   const t = useTranslations()
-  const currentYear = new Date().getFullYear()
 
   return (
     <footer className="py-6 md:px-8 md:py-0">

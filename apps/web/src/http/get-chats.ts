@@ -1,4 +1,4 @@
-import type { MessagesType, MessageType } from '@/@types'
+import type { MessagesType } from '@/@types'
 import { api } from '@/http/api-client'
 
 export async function getChats(groupId: string) {

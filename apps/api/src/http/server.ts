@@ -70,7 +70,7 @@ app.ready().then(() => {
 connectKafkaProducer().catch((err) => console.log('Kafka Producer error', err))
 
 consumeMessages(env.KAFKA_TOPIC).catch((err) =>
-  console.log('Kafka Consumer error', err),
+  console.log('Kafka Consumer error', err)
 )
 
 // Register Swagger

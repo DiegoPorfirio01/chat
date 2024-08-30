@@ -1,11 +1,7 @@
 import { getMessages } from 'next-intl/server'
 
 import { About } from '@/components/marketing/about'
-import FeatureSection from '@/components/marketing/feature'
-import Footer from '@/components/marketing/footer'
-import HeroSection from '@/components/marketing/hero'
 import { Sponsors } from '@/components/marketing/sponsors'
-import UserReviews from '@/components/marketing/users-review'
 import TransitionFadeIn from '@/components/transition-fade-in'
 
 export async function generateMetadata({

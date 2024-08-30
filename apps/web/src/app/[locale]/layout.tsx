@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils'
 
 import { Providers } from '../providers'
 
+// Definição do metadata
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -32,11 +33,14 @@ const sansFont = Plus_Jakarta_Sans({
 type Props = {
   children: ReactNode
   params: { locale: string }
+  sheet: ReactNode
 }
 
+// Definição do componente LocaleLayout
 export default async function LocaleLayout({
   children,
   params: { locale },
+  sheet,
 }: Props) {
   const messages = await getMessages()
 
@@ -56,6 +60,7 @@ export default async function LocaleLayout({
           <Footer />
           <Toaster richColors duration={5000} />
         </Providers>
+        <div>{sheet}</div>
       </body>
     </html>
   )

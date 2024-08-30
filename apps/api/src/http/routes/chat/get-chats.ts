@@ -26,7 +26,7 @@ export async function getChats(app: FastifyInstance) {
                 message: z.string().nullable(),
                 file: z.string().nullable(),
                 createdAt: z.date(),
-              }),
+              })
             ),
           }),
         },
@@ -46,6 +46,6 @@ export async function getChats(app: FastifyInstance) {
       }
 
       return { chats }
-    },
+    }
   )
 }
