@@ -53,14 +53,12 @@ export default async function LocaleLayout({
         <TopLoader />
         <Providers>
           <NextIntlClientProvider messages={messages}>
-            <Header locale={locale} />
             <div className='min-h-screen'>
               {children}
             </div>
           </NextIntlClientProvider>
+          <Footer />
         </Providers>
-        <Toaster />
-        <Footer />
       </body>
     </html>
   )

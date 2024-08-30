@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { Card } from "../ui/card";
@@ -27,29 +27,52 @@ const getRandomValue = (min, max) => Math.random() * (max - min) + min;
 
 const CardsDraggable = () => {
   const containerRef = useRef(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    const container = containerRef.current;
-    const cards = gsap.utils.toArray('.drag-elements');
-
-    cards.forEach((card) => {
-      Draggable.create(card, {
-        bounds: container,
-        onDragStart() {
-          gsap.to(card, { zIndex: 100 });
-        },
-        onDragEnd() {
-          gsap.to(card, { zIndex: 0 });
-        },
+    // Update container size on mount and when the window is resized
+    const handleResize = () => {
+      setContainerSize({
+        width: window.innerWidth,
+        height: window.innerHeight
       });
-    });
+    };
+
+    handleResize(); // Set initial size
+    window.addEventListener('resize', handleResize); // Add resize event listener
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup listener
+    };
   }, []);
 
+  useEffect(() => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const cards = gsap.utils.toArray('.drag-elements');
+
+      cards.forEach((card) => {
+        Draggable.create(card, {
+          bounds: container,
+          onDragStart() {
+            gsap.to(card, { zIndex: 100 });
+          },
+          onDragEnd() {
+            gsap.to(card, { zIndex: 0 });
+          },
+        });
+      });
+    }
+  }, [containerSize]); // Dependency array ensures this runs after containerSize is updated
+
   const getCardPosition = (index) => {
+    if (!containerSize.width || !containerSize.height) {
+      return { translateX: '0px', translateY: '0px' };
+    }
+
     const angle = (index / marketingReviewUsers.length) * 2 * Math.PI;
     const radius = 150; // Ajuste o raio para a área de 800px ao redor do centro
-    const containerWidth = window.innerWidth;
-    const containerHeight = window.innerHeight;
+    const { width: containerWidth, height: containerHeight } = containerSize;
     const cardWidth = 150; // Defina a largura do card
     const cardHeight = 150; // Defina a altura do card
 

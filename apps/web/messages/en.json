@@ -14,7 +14,7 @@
       }
     }
   },
-  "login": {
+  "signIn": {
     "signInFailed": "Sign in failed!",
     "signInFailedMessage": "Please check your email and password and try again.",
     "email": "Email",
@@ -47,7 +47,7 @@
     "welcome": "Welcome to Marketing",
     "hero": {
       "title": "Links",
-      "subtitle": "For Seamless Conversations",
+      "subtitle": "Seamless Conversations",
       "description": "QuickChat makes it effortless to create secure chat links and start conversations in seconds.",
       "button": "Start Chatting",
       "cards": {

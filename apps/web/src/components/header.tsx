@@ -10,15 +10,15 @@ import Logo from '@/app/favicon.ico'
 import { LocaleSwitch } from './locale-switch'
 import { MarketingMenu } from './marketing/menu'
 import { ThemeSwitcher } from './theme/theme-switcher'
+import { useLocale } from 'next-intl'
 
-export default function Header({ locale }: { locale: string }) {
-  const language = locale
+export default async function Header() {
+  const language = useLocale()
   const pathname = usePathname()
   const shouldHaveArrowBack = [
     '/auth',
     '/testimonials',
     '/services',
-    '/dashboard',
     '/prices',
     '/about',
   ]
@@ -26,7 +26,7 @@ export default function Header({ locale }: { locale: string }) {
   return (
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
       <div className='sm:mx-auto mx-0 flex max-w-[1200px] items-center justify-between'>
-        <div className="flex items-center gap-3 min-w-10 ml-5">
+        <div className="flex items-center gap-3 min-w-10 ml-5 sm:ml-0">
           <Image
             src={Logo}
             className="size-8 border border-black dark:border dark:border-white"
@@ -38,7 +38,7 @@ export default function Header({ locale }: { locale: string }) {
             <MarketingMenu />
           </div>
         )}
-        <div className="flex items-center gap-3 p-5">
+        <div className="flex items-center gap-3 p-5 sm:px-0">
           <LocaleSwitch />
           <ThemeSwitcher />
           {shouldHaveArrowBack.some((href) => pathname.includes(href)) && (
