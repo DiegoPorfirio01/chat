@@ -15,7 +15,7 @@ export async function getChatGroupsUser(app: FastifyInstance) {
         summary: 'Get chat groups',
         security: [{ bearerAuth: [] }],
         querystring: z.object({
-          groupId: z.string().uuid(),
+          group_id: z.string().uuid(),
         }),
         response: {
           200: z.object({
@@ -32,7 +32,7 @@ export async function getChatGroupsUser(app: FastifyInstance) {
       },
     },
     async (request) => {
-      const { groupId } = request.query
+      const { group_id: groupId } = request.query
 
       const groupsUser = await prisma.groupUsers.findMany({
         where: {

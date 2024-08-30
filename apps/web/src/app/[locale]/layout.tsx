@@ -3,13 +3,11 @@ import "../index.css"
 
 import type { Metadata } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
-import Head from 'next/head'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import type { ReactNode } from 'react'
 import { Toaster } from 'sonner'
 
-import Header from '@/components/header'
 import TopLoader from '@/components/top-loader'
 import { siteConfig } from '@/config/app'
 import { cn } from '@/lib/utils'
@@ -43,7 +41,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
           'min-h-screen bg-background font-sans text-foreground antialiased',
@@ -58,6 +56,7 @@ export default async function LocaleLayout({
             </div>
           </NextIntlClientProvider>
           <Footer />
+          <Toaster richColors duration={5000} />
         </Providers>
       </body>
     </html>

@@ -19,13 +19,11 @@ export async function getChatGroup(app: FastifyInstance) {
         }),
         response: {
           200: z.object({
-            group: z.object({
-              id: z.string().uuid(),
-              userId: z.string().uuid(),
-              title: z.string(),
-              passcode: z.string(),
-              createdAt: z.date(),
-            }),
+            id: z.string().uuid(),
+            userId: z.string().uuid(),
+            title: z.string(),
+            passcode: z.string(),
+            createdAt: z.date(),
           }),
         },
       },
@@ -40,10 +38,10 @@ export async function getChatGroup(app: FastifyInstance) {
       })
 
       if (!group) {
-        throw new BadRequestError('Groups not founds')
+        throw new BadRequestError('Group not found')
       }
 
-      return { group }
+      return group
     },
   )
 }

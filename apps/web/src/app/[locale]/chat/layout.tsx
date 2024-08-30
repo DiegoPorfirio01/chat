@@ -8,12 +8,12 @@ import { redirect } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dashboard',
+    default: 'Conversation',
     template: '%s | ' + siteConfig.name,
   },
 }
 
-export default function DashboardLayout({
+export default function ChatLayout({
   children,
   sheet,
 }: Readonly<{
@@ -21,19 +21,12 @@ export default function DashboardLayout({
   sheet: React.ReactNode
 }>) {
   const locale = useLocale()
-  
-  if (! isAuthenticated()) {
-    return redirect(`/${locale}`)
-  }
-
+ 
   return (
     <>
       <div className="space-y-4 p-4">
         <div className="mx-auto w-full max-w-[1200px] h-screen">
-          <Header />
-          <Tabs />
           {children}
-          {sheet}
         </div>
       </div>
     </>

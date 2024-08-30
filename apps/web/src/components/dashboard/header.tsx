@@ -15,7 +15,6 @@ export default async function Header() {
             alt="logo"
           />
         </div>
-       
         <div className="flex items-center gap-3 p-5 sm:px-0">
           <LocaleSwitch />
           <ThemeSwitcher />

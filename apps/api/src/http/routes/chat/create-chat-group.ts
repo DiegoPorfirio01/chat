@@ -15,7 +15,6 @@ export async function createChatGroup(app: FastifyInstance) {
         summary: 'Create chat group',
         security: [{ bearerAuth: [] }],
         body: z.object({
-          userId: z.string().uuid(),
           title: z.string(),
           passcode: z.string(),
         }),
@@ -27,7 +26,10 @@ export async function createChatGroup(app: FastifyInstance) {
       },
     },
     async (request) => {
-      const { title, userId, passcode } = request.body
+      console.log('heloi')
+
+      const userId = await request.getCurrentUserId()
+      const { title, passcode } = request.body
 
       try {
         const group = await prisma.chatGroup.create({

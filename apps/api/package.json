@@ -19,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "fastify": "^4.26.2",
     "fastify-plugin": "^4.5.1",
+    "fastify-socket.io": "^5.1.0",
     "fastify-type-provider-zod": "^1.1.9",
     "ioredis": "^5.4.1",
     "kafkajs": "^2.2.4",

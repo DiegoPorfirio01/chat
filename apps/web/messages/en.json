@@ -3,6 +3,7 @@
     "title": "Dashboard",
     "welcome": "Welcome to the dashboard",
     "tabs": {
+      "dashboard": "Dashboard",
       "history": "History",
       "chats": "Chats",
       "settings": "Settings"

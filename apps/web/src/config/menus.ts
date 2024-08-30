@@ -1,6 +1,10 @@
-import type { DashboardTab, MarketingMenu, MenuItem } from '@/@types'
+import type { DashboardTab, MarketingMenu } from '@/@types'
 
 export const dashboardMenu: DashboardTab = [
+  {
+    title: 'Dashboard',
+    href: '/dashboard',
+  },
   {
     title: 'Chats',
     href: '/dashboard/chats',

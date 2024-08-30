@@ -8,7 +8,7 @@ import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function updateChatGroup(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().put(
-    '/chat-group/:id',
+    '/chat-groups/:id',
     {
       schema: {
         tags: ['chat group'],

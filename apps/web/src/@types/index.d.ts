@@ -58,3 +58,42 @@ interface Review {
   quote: string;
   avatarUrl: string;
 }
+
+type GroupChatType = { 
+  id: string;
+  userId: number;
+  title: string;
+  passcode: string;
+  createdAt: string;
+  open: boolean;
+};
+
+type GroupChatsType = {
+  groups: GroupChatType[];
+};
+
+type GroupChatUserType = {
+  id: number;
+  name: string;
+  groupId: string;
+  createdAt: string;
+  isOnline?: boolean;
+};
+
+type MessageType = {
+  id: string;
+  message: string;
+  groupId: string;
+  name: string;
+  createdAt: string;
+};
+
+type MessagesType = {
+  chats: MessageType[];
+};
+
+export interface User {
+  id?: string | null;
+  name?: string | null;
+  email?: string | null;
+}

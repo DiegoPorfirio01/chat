@@ -7,6 +7,14 @@ export function isAuthenticated() {
   return !!cookies().get('token')?.value
 }
 
+export async function getCurrentToken() {
+  try {
+    const token = cookies().get('token')?.value
+    
+    return token
+  } catch (error) {}
+}
+
 export async function auth() {
   const token = cookies().get('token')?.value
 

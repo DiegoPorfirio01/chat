@@ -8,7 +8,7 @@ import { BadRequestError } from '../_errors/bad-request-error'
 
 export async function createChatGroupsUser(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
-    '/chat-groups-user',
+    '/chat-group-users',
     {
       schema: {
         tags: ['chat groups user'],
@@ -20,23 +20,24 @@ export async function createChatGroupsUser(app: FastifyInstance) {
         }),
         response: {
           201: z.object({
-            groupUserId: z.number(),
+            id: z.number(),
+            groupId: z.string(),
+            name: z.string(),
+            createdAt: z.date(),
           }),
         },
       },
     },
     async (request) => {
       const { groupId, name } = request.body
-
       try {
-        const groupUser = await prisma.groupUsers.create({
+        const user = await prisma.groupUsers.create({
           data: {
             groupId,
             name,
           },
         })
-
-        return { groupUserId: groupUser.id }
+        return user
       } catch (error) {
         throw new BadRequestError('Failed to create group')
       }
