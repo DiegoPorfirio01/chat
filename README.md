@@ -10,7 +10,7 @@ Aqui estão as principais ferramentas e bibliotecas que fazem o Lucy funcionar:
 - **Frontend**:
   - [React](https://reactjs.org/) 19 (versão experimental)
   - [Radix UI](https://radix-ui.com/)
-  - [Tailwind CSS](https://tailwindcss.com/) com [Tailwind CSS Animate](https://github.com/andrew-codes/tailwindcss-animate)
+  - [Tailwind CSS](https://tailwindcss.com/)
   - [GSAP](https://greensock.com/gsap)
 - **Backend**:
   - [Fastify 4.2](https://www.fastify.io/)
