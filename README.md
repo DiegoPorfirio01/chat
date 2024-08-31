@@ -6,7 +6,7 @@
 
 Aqui estão as principais ferramentas e bibliotecas que fazem o Lucy funcionar:
 
-- **Framework**: [Next.js 15](https://nextjs.org/)
+- **Framework**: [Next.js 15](https://nextjs.org/) (com utilização de server actions)
 - **Frontend**:
   - [React](https://reactjs.org/) 19 (versão experimental)
   - [Radix UI](https://radix-ui.com/)
