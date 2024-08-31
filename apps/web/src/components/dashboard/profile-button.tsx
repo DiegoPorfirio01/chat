@@ -17,10 +17,6 @@ export async function ProfileButton() {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger className="flex items-center gap-3 outline-none">
-          <div className="flex flex-col items-end">
-            <span className="text-sm font-medium">{user.name}</span>
-            <span>{user.email}</span>
-          </div>
           <Avatar>
             <AvatarFallback>
               {user.name && user.name.charAt(0).toUpperCase()}
@@ -29,6 +25,8 @@ export async function ProfileButton() {
           <ChevronDown className="size-4 text-muted-foreground" />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
+          <DropdownMenuItem>{user.name}</DropdownMenuItem>
+          <DropdownMenuItem>{user.email}</DropdownMenuItem>
           <DropdownMenuItem asChild>
             <Link href={'/api/auth/sign-out'}>
               <LogOut className="mr-2" />
