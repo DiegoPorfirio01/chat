@@ -1,21 +1,25 @@
 # Lucy - Chat em Tempo Real
 
-**Lucy** é um aplicativo de chat em tempo real desenvolvido como um desafio intenso de 3 dias. Explore a complexidade e inovação desta aplicação, que combina uma série de tecnologias modernas para oferecer uma experiência de usuário envolvente e eficiente!
+**Lucy** é um aplicativo de chat em tempo real desenvolvido inicialmente em um desafio intenso de 3 dias. Explore a complexidade e inovação desta aplicação, que combina uma série de tecnologias modernas para oferecer uma experiência de usuário envolvente e eficiente!
 
 ## 🚀 Tecnologias Utilizadas
 
 Aqui estão as principais ferramentas e bibliotecas que fazem o Lucy funcionar:
 
 - **Framework**: [Next.js 15](https://nextjs.org/) (com utilização de server actions)
+
 - **Frontend**:
   - [React](https://reactjs.org/) 19 (versão experimental)
+  - [Prisma ORM](https://www.prisma.io/)
   - [Radix UI](https://radix-ui.com/)
   - [Tailwind CSS](https://tailwindcss.com/)
   - [GSAP](https://greensock.com/gsap)
+  - [Ky](https://github.com/sindresorhus/ky)
+
 - **Backend**:
   - [Fastify 4.2](https://www.fastify.io/)
   - [Socket.IO](https://socket.io/)
-  - [Ky](https://github.com/sindresorhus/ky)
+
 - **Documentação e UI da API**:
   - [Swagger 8](https://swagger.io/)
 - **Outras Dependências**:
@@ -68,6 +72,7 @@ Para rodar o projeto localmente, siga estes passos:
 ## 🛠️ Scripts
 
 - **Desenvolvimento:** `pnpm run dev` - Inicia o servidor de desenvolvimento.
+- **Banco:** `pnpm run db:migrate` - Cria schema e atualiza banco
 - **Construir:** `pnpm run build` - Gera a versão de produção.
 - **Linter:** `pnpm run lint` - Executa o linter para verificar o código.
 
