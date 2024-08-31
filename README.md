@@ -44,7 +44,7 @@ Para rodar o projeto localmente, siga estes passos:
    OBS: - sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted
 
 3. **DevOPS:** na raiz do projeto, temos o docker-compose, utilizaremos para rodar o banco postgre e o redis:
-       ```bash
+      ```bash
    docker-compose up -d
    ```
 
