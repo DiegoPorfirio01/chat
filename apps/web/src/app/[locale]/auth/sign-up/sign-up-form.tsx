@@ -21,7 +21,7 @@ export function SignUpForm() {
   const [{ success, message, errors }, handleSubmit, isPending] = useFormState(
     signUpAction,
     () => {
-      router.push(`${locale}/dashboard`)
+      router.push(`/${locale}/dashboard`)
     },
   )
 
