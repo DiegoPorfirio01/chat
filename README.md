@@ -41,24 +41,29 @@ Para rodar o projeto localmente, siga estes passos:
    ```
 
 2. **Configure as variáveis de ambiente:** Copie e renomeie o arquivo `.env.example` para `.env` na raiz do projeto e preencha as variáveis necessárias. Validações estão implementadas para garantir que todas as variáveis estejam corretas.
-   OBS: - sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted - sugiro que utilize esse serviço para o banco postgre : https://neon.tech/app - ambos são init free (como não tive tempo de fazer a infra, utilizei eles)
+   OBS: - sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted
 
-3. **Gerar schema Prisma:** acesse /apps/api
+3. **DevOPS:** na raiz do projeto, temos o docker-compose, utilizaremos para rodar o banco postgre e o redis:
+       ```bash
+   docker-compose up -d
+   ```
+
+4. **Gerar schema Prisma:** acesse /apps/api
    rode o comando:
 
    ```bash
    pnpm run db:migrate
    ```
 
-4. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
+5. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
 
    ```bash
    pnpm run dev
    ```
 
-5. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
+6. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
 
-6. **Acesse o sistema:** Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para usar a aplicação!
+7. **Acesse o sistema:** Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para usar a aplicação!
 
 ## 🛠️ Scripts
 
