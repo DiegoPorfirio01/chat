@@ -1,11 +1,12 @@
 {
   "dashboard": {
-    "title": "Panel de control",
-    "welcome": "Bienvenido al panel de control",
-    "tab": {
+    "title": "Panel",
+    "welcome": "Bienvenido al panel",
+    "tabs": {
+      "dashboard": "Panel",
       "history": "Historial",
       "chats": "Chats",
-      "settings": "Configuración"
+      "settings": "Configuraciones"
     },
     "profileButton": {
       "label": "Perfil",
@@ -14,11 +15,30 @@
       }
     }
   },
+  "signIn": {
+    "signInFailed": "¡Error al iniciar sesión!",
+    "signInFailedMessage": "Por favor, verifica tu correo electrónico y contraseña e intenta de nuevo.",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "forgetPassword": "¿Olvidaste tu contraseña?",
+    "signInWithEmail": "Iniciar sesión con correo electrónico",
+    "createNewAccount": "Crear nueva cuenta"
+  },
+  "signUp": {
+    "signUpFailed": "¡Error al crear cuenta!",
+    "signUpFailedMessage": "Por favor, verifica tus datos e intenta de nuevo.",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirma tu contraseña",
+    "createAccount": "Crear cuenta",
+    "alreadyRegistered": "¿Ya registrado? Iniciar sesión"
+  },
   "marketing": {
     "menu": {
       "home": "Inicio",
       "about": "Acerca de",
-      "pricing": "Precios",
+      "prices": "Precios",
       "services": "Servicios",
       "testimonials": "Testimonios",
       "login": "Iniciar sesión",
@@ -28,12 +48,12 @@
     "welcome": "Bienvenido a Marketing",
     "hero": {
       "title": "Enlaces",
-      "subtitle": "Para Conversaciones Sin Esfuerzo",
-      "description": "QuickChat facilita la creación de enlaces de chat seguros y el inicio de conversaciones en segundos.",
-      "button": "Empezar a Chatear",
+      "subtitle": "Conversaciones Sin Fricciones",
+      "description": "QuickChat hace que sea fácil crear enlaces de chat seguros y comenzar conversaciones en segundos.",
+      "button": "Comenzar a Chatear",
       "cards": {
         "card1": {
-          "title": "¡Este chat es increíble!",
+          "title": "¡Este Chat es Increíble!",
           "description": "Transforma ideas en software funcional que supera las expectativas."
         },
         "card2": {
@@ -42,10 +62,10 @@
         },
         "card3": {
           "title": "Chat en Tiempo Real",
-          "description": "Experimenta un chat en tiempo real y una comunicación fluida."
+          "description": "Experimenta chat en tiempo real y comunicación fluida."
         },
         "card4": {
-          "title": "Modo Claro y Oscuro",
+          "title": "Modo Claro & Oscuro",
           "description": "Únete al lado oscuro; tenemos café."
         }
       }
@@ -59,20 +79,25 @@
       "description": "La mejor startup de todas"
     },
     "ctsPage": {
-      "title": "Todo Tu",
-      "subtitle": "Ideas y Conceptos",
+      "title": "Todas Tus",
+      "subtitle": "Ideas & Conceptos",
       "description1": "En Una Interfaz",
       "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, beatae. Ipsa tempore ipsum iste quibusdam illum ducimus eos. Quasi, sed!",
-      "button1": "Solicitar una Demo",
-      "button2": "Ver Todas las Funcionalidades"
+      "button1": "Solicitar una Demostración",
+      "button2": "Ver Todas las Características"
+    },
+    "testimonialsPage": {
+      "title": "Testimonios",
+      "subtitle": "Lo Que Dicen las Personas",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor."
     },
     "statistics": {
       "statistic1": {
-        "quantity": "2.7K+",
+        "quantity": "2,7K+",
         "description": "Usuarios"
       },
       "statistic2": {
-        "quantity": "1.8K+",
+        "quantity": "1,8K+",
         "description": "Suscriptores"
       },
       "statistic3": {
@@ -85,8 +110,8 @@
       }
     },
     "servicesPage": {
-      "title": "Centrado en el Cliente",
-      "subtitle": "Servicios",
+      "title": "Servicios",
+      "subtitle": "Centrados en el Cliente",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor.",
       "serviceList": {
         "title1": "Chat en Tiempo Real",
@@ -122,17 +147,17 @@
     },
     "planBasic": {
       "title": "Básico",
-      "monthlyPrice": "9.99",
-      "yearlyPrice": "99.99",
-      "description": "Plan básico con características esenciales",
+      "monthlyPrice": "9,99",
+      "yearlyPrice": "99,99",
+      "description": "Plan básico con funciones esenciales",
       "feature1": "Ejemplo de Característica Número 1",
       "feature2": "Ejemplo de Característica Número 2",
       "actionLabel": "Suscribirse"
     },
     "planPremium": {
       "title": "Premium",
-      "monthlyPrice": "19.99",
-      "yearlyPrice": "199.99",
+      "monthlyPrice": "19,99",
+      "yearlyPrice": "199,99",
       "description": "Plan premium con características avanzadas",
       "feature1": "Ejemplo de Característica Número 1",
       "feature2": "Ejemplo de Característica Número 2",
@@ -141,9 +166,9 @@
     },
     "planEnterprise": {
       "title": "Enterprise",
-      "monthlyPrice": "999.99",
-      "yearlyPrice": "999.99",
-      "description": "Plan empresarial con todas las características",
+      "monthlyPrice": "999,99",
+      "yearlyPrice": "999,99",
+      "description": "Plan enterprise con todas las características",
       "feature1": "Ejemplo de Característica Número 1",
       "feature2": "Ejemplo de Característica Número 2",
       "feature3": "Ejemplo de Característica Número 3",
