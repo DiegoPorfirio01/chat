@@ -42,7 +42,7 @@ export default function HeroSection() {
           </Button>
           <a
             rel="noreferrer noopener"
-            href="https://github.com/DiegoPorfirio/chat.git"
+            href="https://github.com/DiegoPorfirio01/chat.git"
             target="_blank"
             className={`w-full md:w-1/3 ${buttonVariants({
               variant: 'outline',
