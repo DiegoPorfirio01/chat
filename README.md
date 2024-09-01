@@ -44,30 +44,37 @@ Para rodar o projeto localmente, siga estes passos:
    pnpm install
    ```
 
-2. **Configure as variáveis de ambiente:** Copie e renomeie o arquivo `.env.example` para `.env` na raiz do projeto e preencha as variáveis necessárias. Validações estão implementadas para garantir que todas as variáveis estejam corretas.
-   OBS: - sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted
+2. **DevOPS:**
+    rodar banco postgre e o redis:
 
-3. **DevOPS:** na raiz do projeto, temos o docker-compose, utilizaremos para rodar o banco postgre e o redis:
       ```bash
    docker-compose up -d
    ```
 
-4. **Gerar schema Prisma:** acesse /apps/api
-   rode o comando:
+3. **Configure as variáveis de ambiente:**
+
+    ```bash
+    cp .env.example  .env  
+   ```
+   Validações estão implementadas para garantir que todas as variáveis estejam corretas.
+   
+   OBS: - As variaveis relacionadas oa kafka, sugiro que utilize esse serviço para rodar o kafka : https://upstash.com/docs/kafka/overall/getstarted
+
+5. **Gerar schema Prisma:**
 
    ```bash
-   pnpm run db:migrate
+   pnpm run db:schema
    ```
 
-5. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
+6. **Inicie o servidor de desenvolvimento:** Na raiz do projeto, execute:
 
    ```bash
    pnpm run dev
    ```
 
-6. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
+7. **Visualize a documentação da API:** Abra o navegador e acesse [http://localhost:3333/docs](http://localhost:3333/docs) para explorar a documentação interativa gerada pelo Swagger.
 
-7. **Acesse o sistema:** Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para usar a aplicação!
+8. **Acesse o sistema:** Abra o navegador e acesse [http://localhost:3000](http://localhost:3000) para usar a aplicação!
 
 ## 🛠️ Scripts
 
