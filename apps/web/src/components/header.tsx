@@ -42,7 +42,10 @@ export default function Header() {
           <LocaleSwitch />
           <ThemeSwitcher />
           {shouldHaveArrowBack.some((href) => pathname.includes(href)) && (
-            <Link href={`/${language}`} className="flex sm:hidden items-center gap-1">
+            <Link
+              href={`/${language}`}
+              className="flex items-center gap-1 sm:hidden"
+            >
               <ArrowLeftSquare className="size-6" />
             </Link>
           )}

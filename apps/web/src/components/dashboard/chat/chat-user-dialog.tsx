@@ -59,7 +59,7 @@ export default function ChatUserDialog({
         toast.error('Something went wrong.please try again!')
       }
     }
-    if (group.passcode != state.passcode) {
+    if (group.passcode !== state.passcode) {
       toast.error('Please enter correct passcode!')
     } else {
       setOpen(false)

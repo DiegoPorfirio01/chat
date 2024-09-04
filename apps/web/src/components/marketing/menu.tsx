@@ -74,7 +74,17 @@ const SlideTabs = () => {
   )
 }
 
-const Tab = ({ children, setPosition, isActive }) => {
+const Tab = ({
+  children,
+  setPosition,
+  isActive,
+}: {
+  children: React.ReactNode
+  setPosition: React.Dispatch<
+    React.SetStateAction<{ left: number; width: number; opacity: number }>
+  >
+  isActive: boolean
+}) => {
   const ref = useRef(null)
 
   return (
@@ -82,9 +92,13 @@ const Tab = ({ children, setPosition, isActive }) => {
       ref={ref}
       onMouseEnter={() => {
         if (!ref.current) return
-        const { width, left } = ref.current.getBoundingClientRect()
-        const parentLeft =
-          ref.current.parentElement.getBoundingClientRect().left
+        const { width, left } = (
+          ref.current as HTMLElement
+        ).getBoundingClientRect()
+        const parentElement = (ref.current as HTMLElement).parentElement
+        const parentLeft = parentElement
+          ? parentElement.getBoundingClientRect().left
+          : 0
 
         setPosition({
           left: left - parentLeft,

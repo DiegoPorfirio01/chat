@@ -1,9 +1,9 @@
+import { ArrowLeftSquare } from 'lucide-react'
+import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import { useLocale } from 'next-intl'
 
 import { isAuthenticated } from '@/auth/auth'
-import Link from 'next/link'
-import { ArrowLeftSquare } from 'lucide-react'
 
 export default function AuthLayout({
   children,

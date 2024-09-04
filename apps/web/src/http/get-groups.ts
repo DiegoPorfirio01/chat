@@ -1,7 +1,11 @@
 import { env } from '@chat/env'
 import { redirect } from 'next/navigation'
 
-import type { GroupChatsType, GroupChatType, GroupChatUserType } from '@/@types'
+import type {
+  GroupChatsType,
+  GroupChatType,
+  GroupsChatUserType,
+} from '@/@types'
 
 import { api } from './api-client'
 
@@ -40,7 +44,7 @@ export async function getChatGroupUsers(id: string) {
     .get(`chat-groups-user?group_id=${id}`, {
       cache: 'no-cache',
     })
-    .json<GroupChatUserType[]>()
+    .json<GroupsChatUserType>()
 
   return res
 }

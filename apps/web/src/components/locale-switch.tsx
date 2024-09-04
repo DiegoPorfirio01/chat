@@ -14,6 +14,7 @@ import {
 } from './ui/dropdown-menu'
 
 const { localeLabels, locales } = i18nConfig
+type LocaleLabels = typeof localeLabels
 
 export function LocaleSwitch() {
   const router = useRouter()
@@ -39,7 +40,9 @@ export function LocaleSwitch() {
             onClick={() => handleLanguageChange(locale)}
             className="flex items-center"
           >
-            <span className="mr-2">{localeLabels[locale]}</span>
+            <span className="mr-2">
+              {localeLabels[locale as keyof LocaleLabels]}
+            </span>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

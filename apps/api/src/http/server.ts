@@ -1,11 +1,10 @@
-import { env } from '@chat/env'
 import { fastifyCors } from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUI from '@fastify/swagger-ui'
 import { instrument } from '@socket.io/admin-ui'
 import { createAdapter } from '@socket.io/redis-streams-adapter'
-import { fastify } from 'fastify'
+import { fastify, type FastifyInstance } from 'fastify'
 import FastifySocketIO from 'fastify-socket.io'
 import {
   jsonSchemaTransform,
@@ -35,9 +34,16 @@ import { getChatGroups } from './routes/chat/get-chat-groups'
 import { getChatGroupsUser } from './routes/chat/get-chat-groups-user'
 import { getChats } from './routes/chat/get-chats'
 import { updateChatGroup } from './routes/chat/update-chat-group'
+import { env } from '@chat/env'
+
+// Extend the FastifyInstance type to include the 'io' property
+interface CustomFastifyInstance extends FastifyInstance {
+  io: Server
+}
 
 // Initialize Fastify
-const app = fastify().withTypeProvider<ZodTypeProvider>()
+const app =
+  fastify().withTypeProvider<ZodTypeProvider>() as CustomFastifyInstance
 app.setSerializerCompiler(serializerCompiler)
 app.setValidatorCompiler(validatorCompiler)
 
@@ -58,8 +64,8 @@ app.register(FastifySocketIO, {
 app.ready().then(() => {
   const io = app.io as Server
   instrument(io, {
-    auth: false,
-    mode: 'development',
+    auth: false, // on real production you need to set this to true and provide a JWT token
+    mode: 'production',
   })
 
   setupSocket(io)
@@ -70,7 +76,7 @@ app.ready().then(() => {
 connectKafkaProducer().catch((err) => console.log('Kafka Producer error', err))
 
 consumeMessages(env.KAFKA_TOPIC).catch((err) =>
-  console.log('Kafka Consumer error', err)
+  console.log('Kafka Consumer error', err),
 )
 
 // Register Swagger

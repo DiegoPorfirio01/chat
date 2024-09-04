@@ -1,7 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 
-import type { GroupChatType, GroupChatUserType, MessageType } from '@/@types'
+import type {
+  GroupChatType,
+  GroupChatUserType,
+  GroupsChatUserType,
+  MessageType,
+} from '@/@types'
 
 import ChatNav from './chat-nav'
 import ChatSidebar from './chat-sidebar'
@@ -10,11 +15,11 @@ import Chats from './chats'
 
 export default function ChatBase({
   group,
-  users,
+  groupsUser,
   oldMessages,
 }: {
   group: GroupChatType
-  users: Array<GroupChatUserType> | []
+  groupsUser: GroupsChatUserType
   oldMessages: Array<MessageType> | []
 }) {
   const [open, setOpen] = useState(true)
@@ -28,12 +33,12 @@ export default function ChatBase({
   }, [group.id])
   return (
     <div className="flex">
-      <ChatSidebar users={users} />
+      <ChatSidebar groupsUser={groupsUser.groupsUser} />
       <div className="w-full bg-gradient-to-b from-gray-50 to-white md:w-4/5">
         {open ? (
           <ChatUserDialog open={open} setOpen={setOpen} group={group} />
         ) : (
-          <ChatNav chatGroup={group} users={users} user={chatUser} />
+          <ChatNav chatGroup={group} groupsUser={groupsUser} user={chatUser} />
         )}
 
         {/* Messages */}

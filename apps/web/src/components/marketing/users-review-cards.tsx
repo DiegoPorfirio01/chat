@@ -25,7 +25,8 @@ export const UsersReviewCards = () => {
   )
 }
 
-const getRandomValue = (min, max) => Math.random() * (max - min) + min
+const getRandomValue = (min: number, max: number) =>
+  Math.random() * (max - min) + min
 
 const CardsDraggable = () => {
   const containerRef = useRef(null)
@@ -53,21 +54,21 @@ const CardsDraggable = () => {
       const container = containerRef.current
       const cards = gsap.utils.toArray('.drag-elements')
 
-      cards.forEach((card) => {
-        Draggable.create(card, {
+      cards.forEach((card: unknown) => {
+        Draggable.create(card as HTMLElement, {
           bounds: container,
           onDragStart() {
-            gsap.to(card, { zIndex: 100 })
+            gsap.to(card!, { zIndex: 100 })
           },
           onDragEnd() {
-            gsap.to(card, { zIndex: 0 })
+            gsap.to(card!, { zIndex: 0 })
           },
         })
       })
     }
   }, [containerSize]) // Dependency array ensures this runs after containerSize is updated
 
-  const getCardPosition = (index) => {
+  const getCardPosition = (index: number) => {
     if (!containerSize.width || !containerSize.height) {
       return { translateX: '0px', translateY: '0px' }
     }
@@ -130,7 +131,17 @@ const CardsDraggable = () => {
   )
 }
 
-const CardD = ({ className, children, translateX, translateY }) => {
+const CardD = ({
+  className,
+  children,
+  translateX,
+  translateY,
+}: {
+  className: string
+  children: React.ReactNode
+  translateX: string
+  translateY: string
+}) => {
   const rotate = `${getRandomValue(-10, 10)}deg`
 
   return (

@@ -150,7 +150,8 @@ export default function PricingTable() {
     setIsYearly(parseInt(value) === 1)
   const t = useTranslations('marketing')
   const locale = useLocale()
-  const currentMoney = i18nConfig.localeCurrencies[locale]
+  const localeCurrency = i18nConfig.localeCurrencies
+  const currentMoney = localeCurrency[locale as keyof typeof localeCurrency]
 
   const planFree = {
     title: t('planFree.title'),

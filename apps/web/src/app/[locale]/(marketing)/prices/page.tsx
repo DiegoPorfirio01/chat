@@ -9,8 +9,8 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }) {
-  const { marketing }: any = await getMessages({ locale })
-  const title = marketing.menu.prices
+  const messages = await getMessages({ locale })
+  const title = messages['marketing.menu.prices']
 
   return {
     title,

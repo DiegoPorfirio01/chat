@@ -25,7 +25,7 @@ export function setupSocket(io: Server) {
 
   io.on('connection', (socket: CustomSocket) => {
     // * Join the room
-    socket.join(socket.room)
+    socket.join(socket.room!)
 
     socket.on('message', async (data) => {
       try {
@@ -33,7 +33,7 @@ export function setupSocket(io: Server) {
       } catch (error) {
         console.log('The kafka produce error is', error)
       }
-      socket.to(socket.room).emit('message', data)
+      socket.to(socket.room!).emit('message', data)
     })
 
     socket.on('disconnect', () => {

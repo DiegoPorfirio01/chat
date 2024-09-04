@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-import type { GroupChatType, GroupChatUserType, MessageType } from '@/@types'
+import type { GroupChatType, GroupsChatUserType, MessageType } from '@/@types'
 import ChatBase from '@/components/dashboard/chat/chat-base'
 import { getChats } from '@/http/get-chats'
 import { getChatGroup, getChatGroupUsers } from '@/http/get-groups'
@@ -15,15 +15,13 @@ export default async function chat({ params }: { params: { id: string } }) {
     return notFound()
   }
 
-  const chatGroupUsers: Array<GroupChatUserType> | [] = await getChatGroupUsers(
-    params?.id,
-  )
+  const groupsUser: GroupsChatUserType = await getChatGroupUsers(params?.id)
 
   const chats: Array<MessageType> | [] = await getChats(params.id)
 
   return (
     <div>
-      <ChatBase group={chatGroup} users={chatGroupUsers} oldMessages={chats} />
+      <ChatBase group={chatGroup} groupsUser={groupsUser} oldMessages={chats} />
     </div>
   )
 }

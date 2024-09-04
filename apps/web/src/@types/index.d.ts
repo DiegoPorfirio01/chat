@@ -80,6 +80,10 @@ type GroupChatUserType = {
   isOnline?: boolean
 }
 
+type GroupsChatUserType = {
+  groupsUser: GroupChatUserType[] | []
+}
+
 type MessageType = {
   id: string
   message: string

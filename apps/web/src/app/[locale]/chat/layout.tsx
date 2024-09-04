@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   },
 }
 
-// Definição do componente ChatLayout
 export default function ChatLayout({
   children,
 }: {
