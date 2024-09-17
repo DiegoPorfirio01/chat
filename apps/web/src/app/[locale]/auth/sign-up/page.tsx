@@ -1,5 +1,7 @@
 import { getMessages } from 'next-intl/server'
 
+import type { Messages } from '@/@types'
+
 import { SignUpForm } from './sign-up-form'
 
 export async function generateMetadata({
@@ -7,9 +9,9 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }) {
-  const messages = await getMessages({ locale })
-  // @ts-ignore
-  const title = messages.marketing.menu.signUp
+  const messages = (await getMessages({ locale })) as Messages
+
+  const title = messages.marketing.menu.signUp || 'Sign Up'
 
   return {
     title,
