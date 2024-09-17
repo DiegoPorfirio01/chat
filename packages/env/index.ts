@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const env = createEnv({
   server: {
-    SERVER_PORT: z.coerce.number().default(3333),
+    PORT: z.coerce.number().default(3333),
     JWT_SECRET: z.string(),
     DATABASE_URL: z.string().url(),
     KAFKA_BROKER: z.string(),
@@ -17,7 +17,7 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: z.string().url(),
   },
   runtimeEnv: {
-    SERVER_PORT: process.env.SERVER_PORT,
+    PORT: process.env.PORT,
     JWT_SECRET: process.env.JWT_SECRET,
     DATABASE_URL: process.env.DATABASE_URL,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
