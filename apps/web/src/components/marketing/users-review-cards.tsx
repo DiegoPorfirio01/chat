@@ -7,7 +7,6 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { marketingReviewUsers } from '@/config/app'
 
-import TransitionFadeIn from '../transition-fade-in'
 import { Card } from '../ui/card'
 
 gsap.registerPlugin(Draggable)
@@ -18,9 +17,7 @@ export const UsersReviewCards = () => {
       <h2 className="relative z-0 text-[20vw] font-black md:text-[200px]">
         <span className="text-customBlue">Chat Lucy.</span>
       </h2>
-      <TransitionFadeIn>
-        <CardsDraggable />
-      </TransitionFadeIn>
+      <CardsDraggable />
     </section>
   )
 }

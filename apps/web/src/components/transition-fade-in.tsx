@@ -1,25 +1,23 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
-import React, { type ReactNode, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const TransitionFadeIn = ({ children }: { children: ReactNode }) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const pathname = usePathname()
+const TransitionFadeIn = ({ children }: { children: React.ReactNode }) => {
+  const [hasLoaded, setHasLoaded] = useState(false)
 
   useEffect(() => {
-    setIsVisible(false) // Hide initially
-    const timer = setTimeout(() => setIsVisible(true), 100) // Delay to see transition
-
-    return () => clearTimeout(timer) // Cleanup timer on unmount or pathname change
-  }, [pathname])
+    setHasLoaded(true)
+  }, [])
 
   return (
-    <main
-      className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+    <div
+      style={{
+        opacity: hasLoaded ? 1 : 0,
+        transition: 'opacity 0.5s ease-in-out',
+      }}
     >
       {children}
-    </main>
+    </div>
   )
 }
 

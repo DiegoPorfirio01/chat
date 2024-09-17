@@ -9,7 +9,6 @@ import { Services } from '@/components/marketing/services'
 import { Sponsors } from '@/components/marketing/sponsors'
 import UserReviews from '@/components/marketing/users-review'
 import { ScrollToTop } from '@/components/scroll-to-up'
-import TransitionFadeIn from '@/components/transition-fade-in'
 
 export async function generateMetadata({
   params: { locale },
@@ -27,7 +26,7 @@ export async function generateMetadata({
 
 export default function Home() {
   return (
-    <TransitionFadeIn>
+    <>
       <div className="mx-auto max-w-[1200px] p-4">
         <HeroSection />
         <Sponsors />
@@ -40,6 +39,6 @@ export default function Home() {
         <UserReviews />
       </div>
       <ScrollToTop />
-    </TransitionFadeIn>
+    </>
   )
 }
