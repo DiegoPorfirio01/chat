@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "pnpm env:load tsx watch src/http/server.ts",
+    "build": "tsup",
+    "start": "node dist/http/server.js",
     "db:migrate": "pnpm env:load prisma migrate dev",
     "db:studio": "pnpm env:load prisma studio",
     "env:load": "dotenv -e ../../.env --"
@@ -24,6 +26,7 @@
     "ioredis": "^5.4.1",
     "kafkajs": "^2.2.4",
     "socket.io": "^4.7.5",
+    "tsup": "^8.2.4",
     "zod": "^3.22.4"
   },
   "devDependencies": {
