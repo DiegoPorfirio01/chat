@@ -1,5 +1,6 @@
 import { getMessages } from 'next-intl/server'
 
+import type { Messages } from '@/@types'
 import { About } from '@/components/marketing/about'
 import { Cta } from '@/components/marketing/cts'
 import HeroSection from '@/components/marketing/hero'
@@ -15,10 +16,9 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }) {
-  const messages = await getMessages({ locale })
+  const messages = (await getMessages({ locale })) as Messages
 
-  // @ts-ignore
-  const title = messages.marketing.menu.home
+  const title = messages.marketing.menu.home || 'Home'
 
   return {
     title,

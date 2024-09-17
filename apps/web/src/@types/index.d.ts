@@ -14,6 +14,24 @@ export type MarketingMenu = {
   href: string
 }[]
 
+type MenuMessages = {
+  home: string
+  about: string
+  prices: string
+  services: string
+  testimonials: string
+  login: string
+  signUp: string
+}
+
+type MarketingMessages = {
+  menu: MenuMessages
+}
+
+type Messages = {
+  marketing: MarketingMessages
+}
+
 export type Locale = 'en' | 'es' | 'pt-br'
 
 export interface LocaleLabels {

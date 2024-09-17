@@ -1,5 +1,6 @@
 import { getMessages } from 'next-intl/server'
 
+import type { Messages } from '@/@types'
 import { Services } from '@/components/marketing/services'
 import TransitionFadeIn from '@/components/transition-fade-in'
 
@@ -8,9 +9,9 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }) {
-  const messages = await getMessages({ locale })
-  // @ts-ignore
-  const title = messages.marketing.menu.services
+  const messages = (await getMessages({ locale })) as Messages
+
+  const title = messages.marketing.menu.services || 'Services'
 
   return {
     title,
