@@ -1,5 +1,6 @@
 import { ChevronDown, LogOut } from 'lucide-react'
 import Link from 'next/link'
+import { getLocale } from 'next-intl/server'
 
 import { auth } from '@/auth/auth'
 
@@ -12,7 +13,9 @@ import {
 } from '../ui/dropdown-menu'
 
 export async function ProfileButton() {
-  const { user } = await auth()
+  const locale = await getLocale()
+
+  const { user } = await auth({ locale })
   return (
     <>
       <DropdownMenu>

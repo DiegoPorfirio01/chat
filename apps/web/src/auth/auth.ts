@@ -15,11 +15,11 @@ export async function getCurrentToken() {
   } catch (error) {}
 }
 
-export async function auth() {
+export async function auth({ locale }: { locale: string }) {
   const token = cookies().get('token')?.value
 
   if (!token) {
-    redirect('/auth/sign-in')
+    redirect(`${locale}/auth/sign-in`)
   }
 
   try {

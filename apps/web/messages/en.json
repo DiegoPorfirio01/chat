@@ -41,8 +41,8 @@
       "prices": "Prices",
       "services": "Services",
       "testimonials": "Testimonials",
-      "login": "Login",
-      "sign-up": "Sign Up"
+      "login": "Sign In",
+      "signUp": "Sign Up"
     },
     "title": "Marketing",
     "welcome": "Welcome to Marketing",

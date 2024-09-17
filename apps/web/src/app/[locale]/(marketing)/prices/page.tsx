@@ -10,7 +10,8 @@ export async function generateMetadata({
   params: { locale: string }
 }) {
   const messages = await getMessages({ locale })
-  const title = messages['marketing.menu.prices']
+  // @ts-ignore
+  const title = messages.marketing.menu.prices
 
   return {
     title,
