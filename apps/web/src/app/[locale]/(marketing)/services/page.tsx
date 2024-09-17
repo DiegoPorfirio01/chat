@@ -17,6 +17,10 @@ export async function generateMetadata({
   }
 }
 
-export default function PricesPage() {
-  return <Services />
+export default function ServicesPage() {
+  return (
+    <div className="mx-auto max-w-[1200px] animate-appear p-4">
+      <Services />
+    </div>
+  )
 }

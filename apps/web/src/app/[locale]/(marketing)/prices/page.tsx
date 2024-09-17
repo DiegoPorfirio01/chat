@@ -21,7 +21,7 @@ export async function generateMetadata({
 export default function PricesPage() {
   return (
     <>
-      <div className="mx-auto max-w-[1200px] p-4">
+      <div className="mx-auto max-w-[1200px] animate-appear p-4">
         <PricingTable />
       </div>
       <Cta />

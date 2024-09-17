@@ -1,3 +1,4 @@
+import { env } from '@chat/env'
 import { fastifyCors } from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifySwagger from '@fastify/swagger'
@@ -34,7 +35,6 @@ import { getChatGroups } from './routes/chat/get-chat-groups'
 import { getChatGroupsUser } from './routes/chat/get-chat-groups-user'
 import { getChats } from './routes/chat/get-chats'
 import { updateChatGroup } from './routes/chat/update-chat-group'
-import { env } from '@chat/env'
 
 // Extend the FastifyInstance type to include the 'io' property
 interface CustomFastifyInstance extends FastifyInstance {
@@ -139,5 +139,5 @@ app.register(getChats)
 
 // Start Server
 app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
-  console.log('Server is running on port', env.SERVER_PORT)
+  console.log('Server is running on port', env.PORT)
 })

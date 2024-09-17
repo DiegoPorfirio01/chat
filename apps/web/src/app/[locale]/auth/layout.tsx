@@ -24,7 +24,7 @@ export default function AuthLayout({
           <span>Back</span>
         </Link>
       }
-      <div className="w-full max-w-xs">{children}</div>
+      <div className="w-full max-w-xs animate-appear">{children}</div>
     </div>
   )
 }
