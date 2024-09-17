@@ -27,7 +27,7 @@ export async function generateMetadata({
 export default function Home() {
   return (
     <>
-      <div className="mx-auto max-w-[1200px] animate-appear p-4 opacity-100">
+      <div className="mx-auto max-w-[1200px] animate-appear p-4">
         <HeroSection />
         <Sponsors />
         <About />

@@ -7,7 +7,7 @@ interface SponsorProps {
 }
 
 const sponsors: SponsorProps = {
-  icon: <Radar size={34} />,
+  icon: <Radar size={20} />,
   name: 'Sponsor',
 }
 
@@ -20,14 +20,14 @@ export const Sponsors = () => {
         {t('title')}
       </h2>
 
-      <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+      <div className="flex flex-wrap items-center justify-center gap-2 md:gap-8">
         {Array.from(Array(5)).map((index) => (
           <div
             key={index}
             className="flex items-center gap-1 text-muted-foreground/60"
           >
             <span>{sponsors.icon}</span>
-            <h3 className="text-xl  font-bold">
+            <h3 className="text-md  font-bold">
               {sponsors.name} {index}
             </h3>
           </div>
