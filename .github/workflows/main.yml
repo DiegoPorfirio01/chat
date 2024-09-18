@@ -1,0 +1,19 @@
+name: Cron - Ping Server
+
+on:
+  schedule:
+    # Executa a cada minuto
+    - cron: "* * * * *"
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping every 46 seconds
+        run: |
+          # Faz a primeira requisição imediatamente
+          curl https://chat-0kc1.onrender.com/ping
+          # Espera 46 segundos
+          sleep 46
+          # Faz a segunda requisição
+          curl https://chat-0kc1.onrender.com/ping
