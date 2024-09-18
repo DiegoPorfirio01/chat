@@ -114,7 +114,7 @@ const Tab = ({
         textTransform: 'uppercase',
         backgroundColor: isActive ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
         color: 'black',
-        borderRadius: '10px',
+        borderRadius: '4px',
         transition: 'background-color 0.3s ease, color 0.3s ease',
       }}
       className="px-4 py-1.5"
@@ -127,7 +127,7 @@ const Tab = ({
 const Cursor = () => {
   return (
     <li
-      className="cursor absolute z-0 h-8 rounded-sm bg-black md:h-[32px]"
+      className="cursor absolute z-0 h-8 rounded-sm bg-black md:h-[36px] md:cursor-auto"
       style={{ transition: 'all 0.3s ease' }}
     />
   )

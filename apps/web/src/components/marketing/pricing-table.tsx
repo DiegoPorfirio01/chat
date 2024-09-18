@@ -198,7 +198,7 @@ export default function PricingTable() {
   }
 
   return (
-    <section className="container my-24 sm:p-0">
+    <section className="container my-0 sm:my-24 sm:p-0">
       <PricingHeader
         title={t('pricingHeader.title')}
         subtitle={t('pricingHeader.subtitle')}

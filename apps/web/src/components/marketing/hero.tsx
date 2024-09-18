@@ -19,7 +19,7 @@ export default function HeroSection() {
     >
       <div className="space-y-6 text-center lg:text-start">
         <main className="text-6xl font-bold md:text-6xl">
-          <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-foreground bg-gradient-to-r from-[#000DFB] to-[#D247BF] bg-clip-text pr-5 text-transparent sm:max-w-72">
+          <h1 className="animate-typing ml-8 overflow-hidden whitespace-nowrap border-r-4 border-r-foreground bg-gradient-to-r from-[#000DFB] to-[#D247BF] bg-clip-text pr-5 text-transparent sm:ml-16 sm:max-w-72">
             Chat Lucy
           </h1>
           <h2 className="mt-4 bg-clip-text text-3xl text-muted-foreground dark:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] dark:from-zinc-500 dark:via-zinc-300 dark:to-zinc-100 dark:text-transparent">

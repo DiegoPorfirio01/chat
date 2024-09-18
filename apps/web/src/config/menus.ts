@@ -21,10 +21,6 @@ export const dashboardMenu: DashboardTab = [
     title: 'History',
     href: '/dashboard/history',
   },
-  {
-    title: 'Settings',
-    href: '/dashboard/settings',
-  },
 ]
 
 export const marketingMenu: MarketingMenu = [

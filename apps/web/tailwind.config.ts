@@ -82,7 +82,7 @@ const config = {
             visibility: 'hidden',
           },
           '100%': {
-            width: '100%',
+            width: '85%',
           },
         },
         blink: {
