@@ -127,7 +127,7 @@ const Tab = ({
 const Cursor = () => {
   return (
     <li
-      className="cursor absolute z-0 h-8 rounded-sm bg-black md:h-[36px] md:cursor-auto"
+      className="cursor absolute z-0 h-8 rounded-sm bg-transparent sm:cursor-auto sm:bg-black md:h-[36px]"
       style={{ transition: 'all 0.3s ease' }}
     />
   )
