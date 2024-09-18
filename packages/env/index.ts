@@ -10,6 +10,7 @@ export const env = createEnv({
     KAFKA_USERNAME: z.string(),
     KAFKA_PASSWORD: z.string(),
     KAFKA_TOPIC: z.string(),
+    REDIS_URL: z.string().url(),
   },
   client: {},
   shared: {
@@ -26,6 +27,7 @@ export const env = createEnv({
     KAFKA_USERNAME: process.env.KAFKA_USERNAME,
     KAFKA_PASSWORD: process.env.KAFKA_PASSWORD,
     KAFKA_TOPIC: process.env.KAFKA_TOPIC,
+    REDIS_URL: process.env.REDIS_URL,
   },
   emptyStringAsUndefined: true,
 })
