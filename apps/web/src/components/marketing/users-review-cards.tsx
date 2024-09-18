@@ -13,9 +13,11 @@ gsap.registerPlugin(Draggable)
 
 export const UsersReviewCards = () => {
   return (
-    <section className="relative grid min-h-screen w-full place-content-center overflow-hidden">
+    <section className="container relative my-0 grid min-h-screen w-full place-content-center overflow-hidden sm:my-24">
       <h2 className="relative z-0 text-[20vw] font-black md:text-[200px]">
-        <span className="text-customBlue">Chat Lucy.</span>
+        <span className="bg-gradient-to-r from-[#000DFB] to-[#D247BF] bg-clip-text pr-5 text-transparent">
+          Chat Lucy.
+        </span>
       </h2>
       <CardsDraggable />
     </section>

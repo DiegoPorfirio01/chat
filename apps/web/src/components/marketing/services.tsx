@@ -36,7 +36,7 @@ export const Services = () => {
   ]
 
   return (
-    <section className="container py-24 sm:py-32">
+    <section className="container my-24">
       <div className="grid place-items-center gap-8 lg:grid-cols-[1fr,1fr]">
         <div>
           <h2 className="text-3xl font-bold md:text-4xl">

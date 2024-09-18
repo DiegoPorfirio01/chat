@@ -9,7 +9,7 @@ export const About = () => {
   const t = useTranslations('marketing.aboutPage')
 
   return (
-    <section id="about" className="container py-24 sm:py-32">
+    <section id="about" className="container my-24">
       <div className="rounded-lg border bg-muted/50 py-12">
         <div className="flex flex-col-reverse gap-8 px-6 md:flex-row md:gap-12">
           <Image

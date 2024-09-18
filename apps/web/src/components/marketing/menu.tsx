@@ -41,7 +41,7 @@ const SlideTabs = () => {
           opacity: 0,
         }))
       }}
-      className="relative mb-3 flex w-fit rounded-full border-2 border-black bg-white p-0.5 sm:mb-0"
+      className="relative mb-3 flex w-fit rounded-lg border-2 border-black bg-white p-0.5 sm:mb-0"
     >
       <div className="hidden sm:flex">
         {marketingMenu.map((item) => (
@@ -57,14 +57,14 @@ const SlideTabs = () => {
         ))}
       </div>
       <div className="flex sm:hidden">
-        {menuMobile.map((item) => (
+        {menuMobile.map(({ icon: Icon, href }) => (
           <Tab
-            key={item.href}
+            key={href}
             setPosition={setPosition}
-            isActive={pathname === `/${locale}${item.href}`}
+            isActive={pathname === `/${locale}${href}`}
           >
-            <Link href={`/${locale}${item.href}`}>
-              {t(item.title.toLocaleLowerCase())}
+            <Link href={`/${locale}${href}`}>
+              <Icon />
             </Link>
           </Tab>
         ))}
@@ -114,7 +114,7 @@ const Tab = ({
         textTransform: 'uppercase',
         backgroundColor: isActive ? 'rgba(0, 0, 0, 0.5)' : 'transparent',
         color: 'black',
-        borderRadius: '9999px',
+        borderRadius: '10px',
         transition: 'background-color 0.3s ease, color 0.3s ease',
       }}
       className="px-4 py-1.5"
@@ -127,7 +127,7 @@ const Tab = ({
 const Cursor = () => {
   return (
     <li
-      className="cursor absolute z-0 h-8 rounded-full bg-black md:h-[32px]"
+      className="cursor absolute z-0 h-8 rounded-sm bg-black md:h-[32px]"
       style={{ transition: 'all 0.3s ease' }}
     />
   )

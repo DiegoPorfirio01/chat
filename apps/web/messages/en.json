@@ -11,28 +11,28 @@
     "profileButton": {
       "label": "Profile",
       "menu": {
-        "logout": "Logout"
+        "logout": "Log out"
       }
     }
   },
   "signIn": {
     "signInFailed": "Sign in failed!",
-    "signInFailedMessage": "Please check your email and password and try again.",
+    "signInFailedMessage": "Check your email and password and try again.",
     "email": "Email",
     "password": "Password",
-    "forgetPassword": "Forget your password?",
-    "signInWithEmail": "Sign in with e-mail",
+    "forgetPassword": "Forgot your password?",
+    "signInWithEmail": "Sign in with email",
     "createNewAccount": "Create new account"
   },
   "signUp": {
-    "signUpFailed": "Sign up failed!",
-    "signUpFailedMessage": "Please check your input and try again.",
+    "signUpFailed": "Account creation failed!",
+    "signUpFailedMessage": "Check your information and try again.",
     "name": "Name",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm your password",
     "createAccount": "Create account",
-    "alreadyRegistered": "Already registered? Sign In"
+    "alreadyRegistered": "Already registered? Sign in"
   },
   "marketing": {
     "menu": {
@@ -41,27 +41,27 @@
       "prices": "Prices",
       "services": "Services",
       "testimonials": "Testimonials",
-      "login": "Sign In",
-      "signUp": "Sign Up"
+      "login": "Log in",
+      "signUp": "Sign up"
     },
     "title": "Marketing",
     "welcome": "Welcome to Marketing",
     "hero": {
-      "title": "Links",
-      "subtitle": "Seamless Conversations",
-      "description": "QuickChat makes it effortless to create secure chat links and start conversations in seconds.",
+      "title": "",
+      "subtitle": "Seamless conversations",
+      "description": "Chat Lucy makes it easy to create links and start secure conversations in seconds.",
       "button": "Start Chatting",
       "cards": {
         "card1": {
-          "title": "This Chat is Awesome!",
-          "description": "Transform ideas into functional software that exceeds expectations."
+          "title": "This Chat is Amazing!",
+          "description": "Turn ideas into functional software that exceeds expectations."
         },
         "card2": {
           "title": "History",
-          "description": "I really enjoy transforming ideas into functional software that exceeds expectations."
+          "description": "I really enjoy turning ideas into functional software that exceeds expectations."
         },
         "card3": {
-          "title": "Real-time Chat",
+          "title": "Real-Time Chat",
           "description": "Experience real-time chat and seamless communication."
         },
         "card4": {
@@ -84,21 +84,21 @@
       "description1": "In One Interface",
       "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, beatae. Ipsa tempore ipsum iste quibusdam illum ducimus eos. Quasi, sed!",
       "button1": "Request a Demo",
-      "button2": "View All Features"
+      "button2": "See All Features"
     },
     "testimonialsPage": {
       "title": "Testimonials",
-      "subtitle": "What People Say",
+      "subtitle": "What People Are Saying",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor."
     },
     "statistics": {
       "statistic1": {
         "quantity": "2.7K+",
-        "description": "Usuários"
+        "description": "Users"
       },
       "statistic2": {
         "quantity": "1.8K+",
-        "description": "Assinantes"
+        "description": "Subscribers"
       },
       "statistic3": {
         "quantity": "313",
@@ -106,17 +106,17 @@
       },
       "statistic4": {
         "quantity": "665",
-        "description": "Produtos"
+        "description": "Products"
       }
     },
     "servicesPage": {
-      "title": "Client-Centric",
-      "subtitle": "Services",
+      "title": "Services",
+      "subtitle": "Customer-Focused",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor.",
       "serviceList": {
-        "title1": "Real-time Chat",
+        "title1": "Real-Time Chat",
         "description1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-        "title2": "Secure and Private",
+        "title2": "Safe and Private",
         "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
         "title3": "History",
         "description3": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente."
@@ -124,7 +124,7 @@
     },
     "pricingHeader": {
       "title": "Pricing Plans",
-      "subtitle": "Choose the plan that best suits you"
+      "subtitle": "Choose the plan that suits you best"
     },
     "pricingSwitch": {
       "monthly": "Monthly",
@@ -176,8 +176,8 @@
     },
     "footer": {
       "copyright": "All rights reserved.",
-      "availability": "The source code is available on",
-      "builtBy": "Built by",
+      "availability": "The source code is available at",
+      "builtBy": "Developed by",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
       "subscribePlaceholder": "Subscribe to our newsletter",

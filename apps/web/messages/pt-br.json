@@ -47,9 +47,9 @@
     "title": "Marketing",
     "welcome": "Bem-vindo ao Marketing",
     "hero": {
-      "title": "Links",
-      "subtitle": "Conversas Sem Fricções",
-      "description": "O QuickChat torna fácil criar links de chat seguros e iniciar conversas em segundos.",
+      "title": "",
+      "subtitle": "Conversas sem interrupções",
+      "description": "Chat Lucy torna fácil criar links e iniciar conversas seguras em segundos.",
       "button": "Começar a Conversar",
       "cards": {
         "card1": {

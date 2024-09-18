@@ -18,17 +18,12 @@ export default function HeroSection() {
       className="grid place-items-center gap-10 py-20 md:py-32 lg:grid-cols-2"
     >
       <div className="space-y-6 text-center lg:text-start">
-        <main className="text-5xl font-bold md:text-6xl">
-          <h1 className="inline">
-            <span className="inline bg-gradient-to-r from-[#000DFB]  to-[#D247BF] bg-clip-text text-transparent">
-              Chat Lucy
-            </span>{' '}
+        <main className="text-6xl font-bold md:text-6xl">
+          <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-foreground bg-gradient-to-r from-[#000DFB] to-[#D247BF] bg-clip-text pr-5 text-transparent sm:max-w-72">
+            Chat Lucy
           </h1>
-          {t('title')}{' '}
-          <h2 className="inline">
-            <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] bg-clip-text text-transparent">
-              {t('subtitle')}
-            </span>{' '}
+          <h2 className="mt-4 bg-clip-text text-3xl text-muted-foreground dark:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] dark:from-zinc-500 dark:via-zinc-300 dark:to-zinc-100 dark:text-transparent">
+            {t('subtitle')}
           </h2>
         </main>
 
@@ -37,7 +32,7 @@ export default function HeroSection() {
         </p>
 
         <div className="space-y-4 md:space-x-4 md:space-y-0">
-          <Button asChild className="w-full animate-pulse md:w-1/3">
+          <Button asChild className="w-full md:w-1/3">
             <Link href={`/${locale}/auth/sign-up`}>{t('button')}</Link>
           </Button>
           <a

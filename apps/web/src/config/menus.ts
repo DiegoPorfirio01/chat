@@ -1,3 +1,11 @@
+import {
+  Home,
+  LogIn,
+  Quote,
+  ServerCogIcon,
+  ShoppingBagIcon,
+} from 'lucide-react'
+
 import type { DashboardTab, MarketingMenu } from '@/@types'
 
 export const dashboardMenu: DashboardTab = [
@@ -46,17 +54,36 @@ export const marketingMenu: MarketingMenu = [
   },
 ]
 
-export const menuMobile: MarketingMenu = [
+interface MenuItem {
+  title: string
+  icon: React.ComponentType
+  href: string
+}
+
+export const menuMobile: MenuItem[] = [
   {
     title: 'home',
+    icon: Home,
     href: '/',
   },
   {
+    title: 'prices',
+    icon: ShoppingBagIcon,
+    href: '/prices',
+  },
+  {
+    title: 'services',
+    icon: ServerCogIcon,
+    href: '/services',
+  },
+  {
     title: 'testimonials',
+    icon: Quote,
     href: '/testimonials',
   },
   {
     title: 'login',
+    icon: LogIn,
     href: '/auth/sign-in',
   },
 ]

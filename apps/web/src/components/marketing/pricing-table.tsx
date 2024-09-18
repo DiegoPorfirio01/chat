@@ -25,11 +25,11 @@ const PricingHeader = ({
   title: string
   subtitle: string
 }) => (
-  <section className="text-center">
+  <div className="text-center">
     <h2 className="text-3xl font-bold">{title}</h2>
     <p className="pt-1 text-xl">{subtitle}</p>
     <br />
-  </section>
+  </div>
 )
 
 const PricingSwitch = ({ onSwitch }: PricingSwitchProps) => {
@@ -198,7 +198,7 @@ export default function PricingTable() {
   }
 
   return (
-    <section className="container mt-20 sm:p-0">
+    <section className="container my-24 sm:p-0">
       <PricingHeader
         title={t('pricingHeader.title')}
         subtitle={t('pricingHeader.subtitle')}

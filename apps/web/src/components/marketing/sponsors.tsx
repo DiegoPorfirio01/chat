@@ -15,7 +15,7 @@ export const Sponsors = () => {
   const t = useTranslations('marketing.sponsors')
 
   return (
-    <section id="sponsors" className="container pt-24 sm:py-32">
+    <section id="sponsors" className="container my-24">
       <h2 className="text-md mb-8 text-center font-bold text-primary lg:text-xl">
         {t('title')}
       </h2>

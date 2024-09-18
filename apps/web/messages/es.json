@@ -5,7 +5,7 @@
     "tabs": {
       "dashboard": "Panel",
       "history": "Historial",
-      "chats": "Chats",
+      "chats": "Conversaciones",
       "settings": "Configuraciones"
     },
     "profileButton": {
@@ -17,7 +17,7 @@
   },
   "signIn": {
     "signInFailed": "¡Error al iniciar sesión!",
-    "signInFailedMessage": "Por favor, verifica tu correo electrónico y contraseña e intenta de nuevo.",
+    "signInFailedMessage": "Verifica tu correo electrónico y contraseña e inténtalo de nuevo.",
     "email": "Correo electrónico",
     "password": "Contraseña",
     "forgetPassword": "¿Olvidaste tu contraseña?",
@@ -26,18 +26,18 @@
   },
   "signUp": {
     "signUpFailed": "¡Error al crear cuenta!",
-    "signUpFailedMessage": "Por favor, verifica tus datos e intenta de nuevo.",
+    "signUpFailedMessage": "Verifica tu información e inténtalo de nuevo.",
     "name": "Nombre",
     "email": "Correo electrónico",
     "password": "Contraseña",
     "confirmPassword": "Confirma tu contraseña",
     "createAccount": "Crear cuenta",
-    "alreadyRegistered": "¿Ya registrado? Iniciar sesión"
+    "alreadyRegistered": "¿Ya estás registrado? Iniciar sesión"
   },
   "marketing": {
     "menu": {
       "home": "Inicio",
-      "about": "Acerca de",
+      "about": "Sobre",
       "prices": "Precios",
       "services": "Servicios",
       "testimonials": "Testimonios",
@@ -47,25 +47,25 @@
     "title": "Marketing",
     "welcome": "Bienvenido a Marketing",
     "hero": {
-      "title": "Enlaces",
-      "subtitle": "Conversaciones Sin Fricciones",
-      "description": "QuickChat hace que sea fácil crear enlaces de chat seguros y comenzar conversaciones en segundos.",
+      "title": "",
+      "subtitle": "Conversaciones sin interrupciones",
+      "description": "Chat Lucy hace que sea fácil crear enlaces e iniciar conversaciones seguras en segundos.",
       "button": "Comenzar a Chatear",
       "cards": {
         "card1": {
           "title": "¡Este Chat es Increíble!",
-          "description": "Transforma ideas en software funcional que supera las expectativas."
+          "description": "Transforma ideas en software funcional que supera expectativas."
         },
         "card2": {
           "title": "Historial",
-          "description": "Realmente disfruto transformar ideas en software funcional que supera las expectativas."
+          "description": "Realmente me gusta transformar ideas en software funcional que supera expectativas."
         },
         "card3": {
           "title": "Chat en Tiempo Real",
           "description": "Experimenta chat en tiempo real y comunicación fluida."
         },
         "card4": {
-          "title": "Modo Claro & Oscuro",
+          "title": "Modo Claro y Oscuro",
           "description": "Únete al lado oscuro; tenemos café."
         }
       }
@@ -74,17 +74,17 @@
       "title": "Inversores y Fundadores"
     },
     "aboutPage": {
-      "title": "Acerca de",
+      "title": "Sobre",
       "subtitle": "Empresa",
       "description": "La mejor startup de todas"
     },
     "ctsPage": {
       "title": "Todas Tus",
-      "subtitle": "Ideas & Conceptos",
+      "subtitle": "Ideas y Conceptos",
       "description1": "En Una Interfaz",
       "description2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, beatae. Ipsa tempore ipsum iste quibusdam illum ducimus eos. Quasi, sed!",
       "button1": "Solicitar una Demostración",
-      "button2": "Ver Todas las Características"
+      "button2": "Ver Todos los Recursos"
     },
     "testimonialsPage": {
       "title": "Testimonios",
@@ -111,7 +111,7 @@
     },
     "servicesPage": {
       "title": "Servicios",
-      "subtitle": "Centrados en el Cliente",
+      "subtitle": "Orientados al Cliente",
       "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis dolor.",
       "serviceList": {
         "title1": "Chat en Tiempo Real",
@@ -137,42 +137,42 @@
       "custom": "Personalizado"
     },
     "planFree": {
-      "title": "Gratis",
+      "title": "Gratuito",
       "monthlyPrice": "0",
       "yearlyPrice": "0",
-      "description": "Gratis para siempre",
-      "feature1": "Ejemplo de Característica Número 1",
-      "feature2": "Ejemplo de Característica Número 2",
+      "description": "Gratuito para siempre",
+      "feature1": "Ejemplo de Recurso Número 1",
+      "feature2": "Ejemplo de Recurso Número 2",
       "actionLabel": "Comenzar"
     },
     "planBasic": {
       "title": "Básico",
       "monthlyPrice": "9,99",
       "yearlyPrice": "99,99",
-      "description": "Plan básico con funciones esenciales",
-      "feature1": "Ejemplo de Característica Número 1",
-      "feature2": "Ejemplo de Característica Número 2",
+      "description": "Plan básico con recursos esenciales",
+      "feature1": "Ejemplo de Recurso Número 1",
+      "feature2": "Ejemplo de Recurso Número 2",
       "actionLabel": "Suscribirse"
     },
     "planPremium": {
       "title": "Premium",
       "monthlyPrice": "19,99",
       "yearlyPrice": "199,99",
-      "description": "Plan premium con características avanzadas",
-      "feature1": "Ejemplo de Característica Número 1",
-      "feature2": "Ejemplo de Característica Número 2",
-      "feature3": "Ejemplo de Característica Número 3",
-      "actionLabel": "Obtener Premium"
+      "description": "Plan premium con recursos avanzados",
+      "feature1": "Ejemplo de Recurso Número 1",
+      "feature2": "Ejemplo de Recurso Número 2",
+      "feature3": "Ejemplo de Recurso Número 3",
+      "actionLabel": "Adquirir Premium"
     },
     "planEnterprise": {
       "title": "Enterprise",
       "monthlyPrice": "999,99",
       "yearlyPrice": "999,99",
-      "description": "Plan enterprise con todas las características",
-      "feature1": "Ejemplo de Característica Número 1",
-      "feature2": "Ejemplo de Característica Número 2",
-      "feature3": "Ejemplo de Característica Número 3",
-      "actionLabel": "Contáctanos"
+      "description": "Plan enterprise con todos los recursos",
+      "feature1": "Ejemplo de Recurso Número 1",
+      "feature2": "Ejemplo de Recurso Número 2",
+      "feature3": "Ejemplo de Recurso Número 3",
+      "actionLabel": "Contáctenos"
     },
     "footer": {
       "copyright": "Todos los derechos reservados.",
