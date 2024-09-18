@@ -35,6 +35,7 @@ import { getChatGroups } from './routes/chat/get-chat-groups'
 import { getChatGroupsUser } from './routes/chat/get-chat-groups-user'
 import { getChats } from './routes/chat/get-chats'
 import { updateChatGroup } from './routes/chat/update-chat-group'
+import { getPing } from './routes/cron/ping'
 
 // Extend the FastifyInstance type to include the 'io' property
 interface CustomFastifyInstance extends FastifyInstance {
@@ -136,6 +137,8 @@ app.register(getChatGroup)
 app.register(getChatGroups)
 app.register(getChatGroupsUser)
 app.register(getChats)
+
+app.register(getPing)
 
 // Start Server
 app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
