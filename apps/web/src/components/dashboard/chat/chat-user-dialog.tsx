@@ -24,14 +24,14 @@ export default function ChatUserDialog({
   setOpen: Dispatch<SetStateAction<boolean>>
   group: GroupChatType
 }) {
-  const params = useParams()
+  const { id }: { id: string } = useParams()
   const [state, setState] = useState({
     name: '',
     passcode: '',
   })
 
   useEffect(() => {
-    const data = localStorage.getItem(params.id as string)
+    const data = localStorage.getItem(id)
     if (data) {
       const jsonData = JSON.parse(data)
       if (jsonData?.name && jsonData?.groupId) {
@@ -42,27 +42,35 @@ export default function ChatUserDialog({
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
-    const localData = localStorage.getItem(params.id as string)
+    const localData = localStorage.getItem(id)
+    console.log(localData)
     if (!localData) {
       try {
         const user = await api
           .post('chat-group-users', {
             json: {
               name: state.name,
-              groupId: params.id as string,
+              groupId: id,
             },
           })
           .json()
 
-        localStorage.setItem(params.id as string, JSON.stringify(user))
+        localStorage.setItem(id, JSON.stringify(user))
+
+        if (group.passcode !== state.passcode) {
+          toast.error('Please enter correct passcode!')
+        } else {
+          setOpen(false)
+        }
       } catch (error) {
         toast.error('Something went wrong.please try again!')
       }
-    }
-    if (group.passcode !== state.passcode) {
-      toast.error('Please enter correct passcode!')
     } else {
-      setOpen(false)
+      if (group.passcode !== state.passcode) {
+        toast.error('Please enter correct passcode!')
+      } else {
+        setOpen(false)
+      }
     }
   }
 
