@@ -5,14 +5,12 @@ on:
     branches:
       - master
   schedule:
-    - cron: "* * * * *"
+    - cron: '* * * * *'
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping every 46 seconds
+      - name: Ping every 1 min
         run: |
-          curl https://chat-0kc1.onrender.com/ping
-          sleep 46
           curl https://chat-0kc1.onrender.com/ping
