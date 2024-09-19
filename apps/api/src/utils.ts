@@ -13,19 +13,34 @@ export const consumeMessages = async (topic: string) => {
   await consumer.subscribe({ topic })
 
   await consumer.run({
-    eachMessage: async ({ partition, message }) => {
-      const data = message.value ? JSON.parse(message.value.toString()) : null
-      console.log({
-        partition,
-        offset: message.offset,
-        value: data,
-      })
+    eachMessage: async ({ message }) => {
+      const parsedMessage = message.value
+        ? JSON.parse(message.value.toString())
+        : null
 
-      await prisma.chats.create({
-        data,
-      })
+      if (parsedMessage) {
+        const { id, message, name, createdAt, groupId } = parsedMessage
 
-      // Process the message (e.g., save to DB, trigger some action, etc.)
+        const hasChatGroup = !!(await prisma.chatGroup.findFirst({
+          where: {
+            id: groupId,
+          },
+        }))
+
+        if (!hasChatGroup) {
+          return
+        }
+
+        await prisma.chats.create({
+          data: {
+            id,
+            message,
+            name,
+            createdAt,
+            groupId,
+          },
+        })
+      }
     },
   })
 }
