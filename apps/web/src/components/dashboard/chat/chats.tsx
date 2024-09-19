@@ -48,9 +48,10 @@ export default function Chats({
       createdAt: new Date().toISOString(),
       groupId: group.id,
     }
+
     socket.emit('message', payload)
     setMessage('')
-    setMessages([...messages, payload])
+    setMessages((state) => [...state, payload])
   }
 
   return (
@@ -58,16 +59,23 @@ export default function Chats({
       <div className="flex flex-1 flex-col-reverse overflow-y-auto">
         <div ref={messagesEndRef} />
         <div className="flex flex-col gap-2">
-          {messages.map((message) => (
+          {messages.map(({ id, name, message }) => (
             <div
-              key={message.id}
+              key={id}
               className={`max-w-sm rounded-lg p-2 ${
-                message.name === chatUser?.name
+                name === chatUser?.name
                   ? 'self-end bg-gradient-to-r from-blue-400  to-blue-600 text-white'
                   : 'self-start bg-gradient-to-r from-gray-200 to-gray-300 text-black'
               }`}
             >
-              {message.message}
+              {name !== chatUser?.name ? (
+                <>
+                  <b>{name}</b> says: <br />
+                  {message}
+                </>
+              ) : (
+                <>{message}</>
+              )}
             </div>
           ))}
         </div>

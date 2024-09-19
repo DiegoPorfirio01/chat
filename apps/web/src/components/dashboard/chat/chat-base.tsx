@@ -27,10 +27,10 @@ export default function ChatBase({
   useEffect(() => {
     const data = localStorage.getItem(group.id)
     if (data) {
-      const pData = JSON.parse(data)
+      const pData: GroupChatUserType = JSON.parse(data)
       setChatUser(pData)
     }
-  }, [group.id])
+  }, [open])
   return (
     <div className="flex">
       <ChatSidebar groupsUser={groupsUser.groupsUser} />
