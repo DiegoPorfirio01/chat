@@ -11,7 +11,7 @@ export async function deleteChatGroup(app: FastifyInstance) {
     '/chat-group/:id',
     {
       schema: {
-        tags: ['chat group'],
+        tags: ['chat-group'],
         summary: 'Delete chat group',
         security: [{ bearerAuth: [] }],
         params: z.object({
@@ -36,6 +36,6 @@ export async function deleteChatGroup(app: FastifyInstance) {
       } catch (error) {
         throw new BadRequestError('Failed to create group')
       }
-    }
+    },
   )
 }

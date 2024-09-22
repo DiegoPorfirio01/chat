@@ -11,7 +11,7 @@ export async function createChatGroupsUser(app: FastifyInstance) {
     '/chat-group-users',
     {
       schema: {
-        tags: ['chat groups user'],
+        tags: ['chat-groups-user'],
         summary: 'Create chat group user',
         security: [{ bearerAuth: [] }],
         body: z.object({

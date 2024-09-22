@@ -11,7 +11,7 @@ export async function createChatGroup(app: FastifyInstance) {
     '/chat-group',
     {
       schema: {
-        tags: ['chat group'],
+        tags: ['chat-group'],
         summary: 'Create chat group',
         security: [{ bearerAuth: [] }],
         body: z.object({
@@ -43,6 +43,6 @@ export async function createChatGroup(app: FastifyInstance) {
       } catch (error) {
         throw new BadRequestError('Failed to create group')
       }
-    }
+    },
   )
 }

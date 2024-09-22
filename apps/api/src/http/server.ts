@@ -138,8 +138,6 @@ app.register(getChatGroups)
 app.register(getChatGroupsUser)
 app.register(getChats)
 
-app.register(getPing)
-
 // Start Server
 app.listen({ port: env.PORT, host: '0.0.0.0' }).then(() => {
   console.log('Server is running on port', env.PORT)

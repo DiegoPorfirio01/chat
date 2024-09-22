@@ -11,7 +11,7 @@ export async function getChatGroups(app: FastifyInstance) {
     '/chat-groups',
     {
       schema: {
-        tags: ['chat group'],
+        tags: ['chat-group'],
         summary: 'Get chat groups',
         security: [{ bearerAuth: [] }],
         response: {
@@ -23,7 +23,7 @@ export async function getChatGroups(app: FastifyInstance) {
                 title: z.string(),
                 passcode: z.string(),
                 createdAt: z.date(),
-              })
+              }),
             ),
           }),
         },
@@ -46,6 +46,6 @@ export async function getChatGroups(app: FastifyInstance) {
       }
 
       return { groups }
-    }
+    },
   )
 }
