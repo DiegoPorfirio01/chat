@@ -2,6 +2,8 @@
 
 **Lucy** é um aplicativo de chat em tempo real desenvolvido inicialmente em um desafio intenso de 3 dias. Explore a complexidade e inovação desta aplicação, que combina uma série de tecnologias modernas para oferecer uma experiência de usuário envolvente e eficiente!
 
+**Documentação OPEN API (SWAGGER)** [https://chat-0kc1.onrender.com/docs](https://chat-0kc1.onrender.com/docs)
+
 ## 🚀 Tecnologias Utilizadas
 
 Aqui estão as principais ferramentas e bibliotecas que fazem o Lucy funcionar:
